@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>侧边悬浮折叠隐藏弹窗效果</title>
+</head>
+<body>
+<div class="main">
+	<div class="main2"><a href="javascript:" class="bar"></a>
+		<ul>
+			<li><a href="javascript:;">jquery全屏轮播特效...</a></li>
+			<li><a href="javascript:;">jquery全屏轮播特效...</a></li>
+			<li><a href="javascript:;">jquery全屏轮播特效...</a></li>
+			<li><a href="javascript:;">jquery全屏轮播特效...</a></li>
+			<li><a href="javascript:;">jquery全屏轮播特效...</a></li>
+			<li><a href="javascript:;">jquery全屏轮播特效...</a></li>
+			<li><a href="javascript:;">jquery全屏轮播特效...</a></li>
+			<li><a href="javascript:;">jquery全屏轮播特效...</a></li>
+		</ul>
+	</div>
+</div>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script language="javascript">
+	$(function(){
+		$('.main').css('left','-262px');
+		var expanded = true;
+		$('.bar').click(function(){
+			if(expanded){
+				// 展开状态
+				$('.main').animate({left:'0'},500);
+				$('.bar').css('background-position','-25px 0px');
+			}else{
+				// 隐藏状态
+				$('.main').animate({left:'-262px'},500);
+				$('.bar').css('background-position','-0px 0px');
+			}
+			expanded = !expanded;
+		});
+	});
+</script>
+</body>
+</html>

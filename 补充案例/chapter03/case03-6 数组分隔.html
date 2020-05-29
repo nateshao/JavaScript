@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组分隔</title>
+    <script>
+        // 将字符串数组用|或其他符号分割
+
+        // 求一个字符串  aa|bb|cc|ee
+        var array = ["aa", "bb", "cc","dd","ee"];
+        var str = array[0]; // 取出数组的第一项aa
+        //分隔符
+        var seperator = "|";
+        for (var i = 1; i < array.length; i++) {
+         // str = str + seperator + array[i];
+            str += seperator + array[i];
+         }
+         console.log(str) // 分隔之后的数组
+    </script>
+</head>
+<body>
+</body>
+</html>

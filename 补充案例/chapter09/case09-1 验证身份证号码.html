@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>身份证号码验证</title>
+</head>
+<body>
+		身份证号码：<input  placeholder="请输入身份证号码" type="text" name="identityCard" id="idCard" onblur="idCard()"/>
+	<script type="text/javascript">
+		// 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X。 
+		function idCard(){
+			var val=document.getElementById("idCard").value;
+			var regIdCord= /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+			if(!regIdCord.test(val)){
+				alert('身份证输入不合法！');
+				 document.getElementById("idCard").value = "";
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>

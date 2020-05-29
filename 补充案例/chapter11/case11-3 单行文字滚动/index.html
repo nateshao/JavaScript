@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单行文字滚动</title>
+</head>
+<body>
+	<div class="demopage">
+		<h2>jquery文字上下--单行滚动</h2>
+		<div class="scrollDiv" id="s1">
+			<ul>
+				<li><a href="javascript:;">jquery 滚动条</a></li>
+				<li><a href="javascript:;">jquery 图片切换</a></li>
+				<li><a href="javascript:;">jquery 提示插件</a></li>
+				<li><a href="javascript:;">jquery 弹出层插件</a></li>
+				<li><a href="javascript:;">jquery 表单美化</a></li>
+				<li><a href="javascript:;">jquery HTML5 幻灯片</a></li>
+				<li><a href="javascript:;">jquery 图片放大镜</a></li>
+				<li><a href="javascript:;">jquery 图片幻灯片</a></li>
+			</ul>
+		</div>
+	</div>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+	function AutoScroll(obj){
+		$(obj).find("ul:first").animate({
+			marginTop:"-25px"
+		},500,function(){
+			$(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
+		});
+	}
+	$(document).ready(function(){
+		setInterval('AutoScroll("#s1")',3000);
+	});
+</script>
+</body>
+</html>

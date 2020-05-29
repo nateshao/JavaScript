@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>从大到小排序</title>
+</head>
+<body>
+    <script>
+    // 数组是 70,35,67,49,20,59,98,100
+    // 采用冒泡排序
+    /*
+    第一轮是比较8-1次  70 67 49 35 59 98 100 20
+    第二轮是比较8-2次  70 67 49 59 98 100 35 20 	
+	第三轮是比较8-3次  70 67 59 98 100 49 35 20	
+	第四轮是比较8-4次  70 67 98 100 59 49 35 20
+	第五轮是比较8-5次  70 98 100 67 59 49 35 20
+	第六轮是比较8-6次  98 100 70 67 59 49 35 20
+	第七轮是比较8-7次  100 98 70 67 59 49 35 20
+    */
+   	var arr = new Array(70,35,67,49,20,59,98,100);
+    var exchange = 0; // 中间交换变量
+    // 第一次for用来控制比较的轮数,i代表轮次
+    for(var i=1;i < arr.length;i++){
+        // 控制每轮比较几次的
+        for(var j=0;j < arr.length-i;j++){
+            if(arr[j] < arr[j+1]){
+                //实现交换
+                exchange = arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=exchange;
+            }
+        }
+    }
+    alert(arr)
+    alert(arr[0]); // 100
+    alert(arr[7]); // 20
+</script>
+</body>
+</html>

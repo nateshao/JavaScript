@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三元运算符比较最大值</title>
+</head>
+<body>
+  <script>
+    // 使用三元运算符结构： boolean表达式?操作一:操作二;
+    // a > b ? alert(a) : alert(b);
+    // 判断a是否大于b，如果a大于b成立，输出a，如果不成立。输出b.
+    // 得到三个数中最大的数：
+    var a = 88;
+    var b = 66;
+    var c = 28;
+    //让a和b进行比较，找出大的，再用大的跟c比较
+    (a > b ? a : b)>c ? alert( a > b ? a : b):alert(c);
+  </script>
+</body>
+</html>

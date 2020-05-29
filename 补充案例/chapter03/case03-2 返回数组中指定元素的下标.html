@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>返回数组中指定元素的下标</title>
+</head>
+<body>
+    <script>
+        // 查找数组中元素d返回其对应的所有索引的下标 
+		function findall(a,x){
+			var results=[],
+			len=a.length,
+			pos=0;
+			while(pos < len){
+				pos= a.indexOf (x,pos);
+		    	if(pos === -1){ //未找到就退出循环完成搜索
+		      		break;
+		    	}
+		    	results.push(pos); // 找到就存储索引
+		    	pos+=1; // 并从下个位置开始搜索
+		  	}
+		  		return results;
+		}
+		var arr = ['a','b','d','d','c','d','d']; 
+		document.write(findall(arr,'d')) // 返回d元素的下标[2,3,5,6]
+		 
+	//  找到元素d出现的次数
+		function count(arr, item) {
+		    var number = 0;
+		    for(var i=0;i<arr.length;i++) {
+		        if(arr[i]==item){
+		            number++;
+		        }
+		    }
+		    return number;
+		}
+		document.write('</br>'+count(arr,'d')) // 4
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>匹配中文字符</title>
+</head>
+<body>
+	<!-- 关于上传的时候，只能选择中文名称的图片 -->
+	<script type="text/javascript">
+		var str = "有中文中国人aaaa?and English.新年好，好日子";  
+		var reg = /[\u4E00-\u9FA5\uf900-\ufa2d]/ig;  
+		document.write("原文字："+str);
+		str = str.replace(reg,'w');
+		// 把中文替换成i
+		document.write("<br>"+"替换后文字："+str);	
+	</script>
+</body>
+</html>

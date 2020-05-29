@@ -1,0 +1,10 @@
+<input type="button" onclick="alert('Hello');" value="test">
+
+<body>
+  <input id="btn" type="button" value="test">
+  <script>
+    document.getElementById('btn').onclick = function() {
+      alert(this.value);    // 获取按钮的value属性，输出结果：test
+    };
+  </script>
+</body>

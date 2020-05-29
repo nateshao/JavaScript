@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>禁用元素默认行为二</title>
+</head>
+<body onclick="preventLink(event)">
+  <a href="http://www.baidu.com.com/">百度一下</a>
+<script type="text/javascript">
+  function preventLink(event){
+    // 火狐下是event；IE和Chrome下是window.event 
+    var  e = event || window.event; // 处理兼容问题：触发此事件的元素对象
+     if(e.preventDefault){
+        e.preventDefault(); //标准浏览器 谷歌 IE11 火狐
+     }else{
+        e.returnValue = false; // 早期版本IE浏览器(IE8以下)
+     }
+     // target是单击的元素 IE和谷歌下是srcElement 火狐下是target
+     var target = event.target || event.srcElement;  
+     // 获取元素内部元素
+     alert(target.nodeName.toLocaleLowerCase()); // 打印出a
+    };
+</script>
+</body>
+</html>

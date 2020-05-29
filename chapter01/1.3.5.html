@@ -1,0 +1,23 @@
+<script>
+  var name = prompt('请输入你的名字：');    // 弹出一个输入框，提示用户输入内容
+  alert('你的名字是：' + name);             // 输出用户输入的内容
+</script>
+
+<script>
+  alert('你的名字是：' + prompt('请输入你的名字：'));
+</script>
+
+<script>
+  prompt('请输入你的名字：', '匿名');
+</script>
+
+<script>
+  // 定义函数
+  function sum(a, b) {
+    c = a + b;              // 函数内部的代码
+    return c;               // 函数的返回值（也可以与上一行合并为return a + b;）
+  }
+  // 调用函数
+  alert(sum(11, 22));       // 输出结果：33
+  alert(sum(22, 33));       // 输出结果：55
+</script>

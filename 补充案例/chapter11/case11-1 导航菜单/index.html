@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航菜单</title>
+</head>
+<body>
+	<div id="menu1" class="menu">
+		<ul>
+			<li><a href="javascript:;">首　　页</a></li>
+			<li><a href="javascript:;">企业文化</a></li>
+			<li><a href="javascript:;">产品展示</a></li>
+			<li><a href="javascript:;">新闻中心</a></li>
+			<li><a href="javascript:;">我　　的</a></li>
+			<li><a href="javascript:;">在线咨询</a></li>
+			<li><a href="#">关于我们</a></li>
+		</ul>
+		<div class="cls"></div>
+	</div>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script language="javascript">
+	$(document).ready(function() {
+		// wrapInner():在每个a元素内容上包围<span class="out">元素
+		$("#menu1 li a").wrapInner( '<span class="out"></span>' ).append( '<span class="bg"></span>' );
+		// append() 向每个匹配的元素内部追加内容：$(A).appendTo(B)把B追加到A中
+
+		$("#menu1 li a").each(function() {
+			$( '<span class="over">' +  $(this).text() + '</span>' ).appendTo( this );
+		});
+		// appendTo() 把所有匹配的元素追加到指定的元素元素集合中：$(A).appendTo(B) 把A追加到B
+
+		$("#menu1 li a").hover(function() {
+			// .out隐藏
+			$(".out",this).stop().animate({'top':'40px'},250); 
+			// .over显示
+			$(".over",this).stop().animate({'top':'0px'},250); 
+			// .bg 显示 
+			$(".bg",this).stop().animate({'top':'0px'},120); 
+			
+
+		}, function() {
+			// .out显示
+			$(".out",this).stop().animate({'top':'0px'},250); 
+			// .over隐藏
+			$(".over",this).stop().animate({'top':'-40px'},250);
+			// .bg 隐藏
+			$(".bg",this).stop().animate({'top':'-40px'},120); 
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+@charset "utf-8";
+body,ul{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	font-family:"微软雅黑", "宋体";
+	font-size:12px;
+	color:#ccc;
+}
+.cls{clear:both;}
+.menu{
+	width:600px;
+	height:40px;
+	display:block;
+	padding:0px;
+	margin: 0px auto 40px;
+}
+.menu li{
+	float:left;
+	overflow:hidden;
+	position:relative;
+	width:80px;
+	line-height:40px;
+	text-align:center;
+}
+.menu li a{
+	position:relative;
+	display:block;
+	height:40px;
+	text-decoration:none;
+	cursor:pointer;
+}
+.menu li span{
+	position:absolute;
+	left:0;
+	width:80px;
+}
+.menu li span.out{
+	top:0px;
+}
+.menu span.over,.menu span.bg{
+	top:-40px;
+}
+
+#menu1{
+	background-color:#e1e1e1;
+}
+#menu1 a{
+	color:#000;
+}
+#menu1 span.over{
+	color:#FFF;
+}
+#menu1 span.bg{
+	height:40px;
+	background-image:url(../images/bg_over.gif);
+	background-repeat:no-repeat;
+	background-position:center center;
+}

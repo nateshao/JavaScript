@@ -1,0 +1,43 @@
+<script>
+  window.console;               // 访问window对象的console属性
+  window.document;              // 访问window对象的document属性
+  window.alert('test');         // 调用window对象的alert()方法
+  window.prompt('test');        // 调用window对象的prompt()方法
+</script>
+
+<script>
+  window.console.log('test');         // 调用console对象的log()方法
+  window.document.write('test');      // 调用document对象的write()方法
+</script>
+
+<body>
+  <div id="test">Hello</div>
+  <script>
+    var test = document.getElementById('test');    // 根据元素id创建元素对象
+    alert(test.innerHTML);                         // 通过InnerHTML属性获取元素内容，输出结果：Hello
+  </script>
+</body>
+
+<script>
+  var str = 'apple';                 // 定义一个字符串
+  alert(str.length);                 // 获取字符串长度，输出结果：5
+  alert(str.toUpperCase());          // 获取转换大写后的结果，输出结果：APPLE
+  alert('aa'.toUpperCase());         // 直接调用字符串的成员方法，输出结果：AA
+</script>
+
+<script>
+  // 创建对象
+  var stu = {};                      // 创建一个名称为stu的空对象
+  // 添加属性
+  stu.name = '小明';                 // 为stu对象添加name属性
+  stu.gender = '男';                 // 为stu对象添加gender属性
+  stu.age = 18;                      // 为stu对象添加age属性
+  // 访问属性
+  alert(stu.name);                   // 访问stu对象的name属性，输出结果：小明
+  // 添加方法
+  stu.introduce = function () {
+    return '我叫' + this.name + '，今年' + this.age + '岁。';
+  };
+  // 调用方法
+  alert(stu.introduce());            // 输出结果：我叫小明，今年18岁。
+</script>

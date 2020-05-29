@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量的作用域练习题</title>
+    <script>
+
+        // JavaScript中只有声明的变量会提升 如：var a
+        // 初始化的不会提升  如： var a = 5; 
+        //变量的作用域：变量在什么位置可以使用
+        //全局作用域:在任何位置都可以访问      
+       // var name = "a"; // 全局变量
+       // console.log(name); // a
+       // function f1 () {
+       //     console.log(name); // a
+       // }
+       // f1(); 
+
+        function f1(){
+            // a 局部变量
+            // b c 全局变量
+            var a; // var a =9;初始化变量不会提升
+            a = b = c = 9;
+            console.log('a'+a); // 9
+            console.log('b'+b); // 9
+            console.log('c'+c); // 9
+
+        }
+
+        f1();
+        console.log('cc'+c); // 9
+        console.log('bb'+b); // 9
+        console.log('aa'+a); // a is not defined
+
+
+//     分析以上代码的执行过程是：
+
+//    1 、解析器看到放在script标签里面的代码进行预解析
+
+//    2、找到var 、 function 和 参数并把它们提前
+
+//    3、function f1()
+
+//    5、最后再按照原始说法：一行一行的执行代码
+
+//    6、执行过程，f1()
+
+//     7、f1作用域进行预解析   
+
+//     8、var a;
+
+//     9、一行一行的执行函数内部代码
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数计算圆的面积和周长</title>
+</head>
+<body>
+  <script>
+    /** 方法一：
+     * 求圆的面积 
+     * 公式S=π * r * r
+    */
+    /*
+    function getArea(r) {
+      // 过滤掉undefined  null NaN  ""  0
+      r = r || 0; 
+      // 判断是否是数字
+      var pai = 3.1415926;
+      return pai * r * r;
+   }
+    var area = getArea(5);
+    console.log(area);
+    */
+
+    /** 方法二：
+     * 求圆的面积
+     * @param r 圆的半径 {number}
+     * @returns 圆的面积{number}
+    */
+   function getArea(r) {
+       // pi  Math.PI pi:圆的周长和它的直径之比近似π≈3.141592653589793
+       // Math.pow()  //求平方
+       r = r || 0;
+       return Math.PI * Math.pow(r, 2);
+   }
+    var area = getArea(5);
+    console.log("半径为5的圆的面积是："+area);
+
+    /**
+     * 求圆的周长
+     * @param r 半径 {number}
+     * @returns 周长 {number}
+    */
+    /* */
+     function getLong (r) {
+         r = r || 0;
+         return 2 * Math.PI * r;
+     }
+     var long = getLong(5);
+     console.log("半径为5的圆的周长是："+long);
+  </script>
+</body>
+</html>

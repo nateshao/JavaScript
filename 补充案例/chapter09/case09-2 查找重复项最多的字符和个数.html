@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>查找重复项最多的字符和个数</title>
+</head>
+<body>
+<script type="text/javascript">
+	var str='sbgpppgbbbbssppssbbsss';
+	var array= str.split('');// 把字符串划分为字符串数组
+	str = array.sort().join('')// 对数组排序，再将数组转为字符串
+	var val = " "; // 存储最多的字符串
+	var count=0; // 记录重复的次数
+	var reg= /(\w)\1+/g;
+	// g在全局中查找 (\w)：匹配任意一个字母（大小写）、数字和下划线
+	// \1 等于 () 中匹配的内容
+	// + 表示 匹配前面的子表达式一次或多次
+	// $1、$2、...、$99	与reg中的第1到第99 个子表达式相匹配的文本。
+	str.replace(reg,function($1,$2){   	
+   		if(count < $1.length){ 
+      		count = $1.length;  
+      		val = $2;  
+   		}  
+	});  
+alert('最多的字符：'+ val +' ,重复的次数：'+count); // 最多的字符：s ,重复的次数：8 
+</script>
+</body>
+</html>
