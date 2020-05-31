@@ -127,3 +127,28 @@ function myFunction() {
 ```
 > 因为局部变量只作用于函数内，所以不同的函数可以使用相同名称的变量。
 局部变量在函数开始执行时创建，函数执行完后局部变量会自动销毁。
+JavaScript 全局变量
+### 变量在函数外定义，即为全局变量。
+
+> 全局变量有全局作用域: 网页中所有脚本和函数均可使用。 
+```html
+实例
+var carName = " Volvo";
+// 此处可调用 carName 变量
+function myFunction() {
+    // 函数内可调用 carName 变量
+}
+```
+
+*如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量。*
+```html
+以下例子中 carName 在函数内，但是为全局变量。
+
+// 此处可调用 carName 变量
+ 
+function myFunction() {
+    carName = "Volvo";
+    // 此处可调用 carName 变量
+}
+```
+
