@@ -61,6 +61,69 @@ var sln = txt.length;       //26
 \b	退格符
 \f	换页符
 ```
+### 字符串可以是对象
+- 通常， JavaScript 字符串是原始值，可以使用字符创建： var firstName = "John"
+- 但我们也可以使用 new 关键字将字符串定义为一个对象： var firstName = new String("John")
+```html
+实例
+var x = "John";
+var y = new String("John"); 
+typeof x // 返回 String
+typeof y // 返回 Object
+```
+**不要创建 String 对象。它会拖慢执行速度，并可能产生其他副作用：**
+```html
+var x = "John";             
+var y = new String("John");
+(x === y) // 结果为 false，因为 x 是字符串，y 是对象
+```
+- === 为绝对相等，即数据类型与值都必须相等。
 
+### 用于字符串的 + 运算符
+> + 运算符用于把文本值或字符串变量加起来（连接起来）。
+> 如需把两个或多个字符串变量连接起来，请使用 + 运算符。
 
-Zabbix  nginx  mysql SQLserver es，jekins。docker。K8S
+```html
+实例
+如需把两个或多个字符串变量连接起来，请使用 + 运算符：
+
+txt1="What a very";
+txt2="nice day";
+txt3=txt1+txt2;
+txt3 运算结果如下:
+
+What a verynice day
+```
+- 要想在两个字符串之间增加空格，需要把空格插入一个字符串之中：
+```html
+实例
+txt1="What a very ";
+txt2="nice day";
+txt3=txt1+txt2;
+在以上语句执行后，变量 txt3包含的值是：
+What a very nice day
+```
+
+- 或者把空格插入表达式中：:
+```html
+txt1="What a very";
+txt2="nice day";
+txt3=txt1+" "+txt2;
+在以上语句执行后，变量txt3 包含的值是：
+
+What a very nice day
+```
+
+- 对字符串和数字进行加法运算
+- 两个数字相加，返回数字相加的和，如果数字与字符串相加，返回字符串，如下实例：
+```
+实例
+x=5+5;
+y="5"+5;
+z="Hello"+5;
+x,y, 和 z 输出结果为:
+
+10
+55
+Hello5
+```
