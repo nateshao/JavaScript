@@ -1,0 +1,19 @@
+<script>
+  var str = '123*abc.456';
+  console.log(str.search('.*'));        // 输出结果：0
+  console.log(str.search(/[\.\*]/));    // 输出结果：3
+</script>
+
+<script>
+  var str = 'test@123.com';
+  var reg = /[@\.]/;
+  var split_res = str.split(reg);
+  console.log(split_res);    // 输出结果：(3) ["test", "123", "com"]
+</script>
+
+<script>
+  var str = 'We are a family';
+  var reg = /\s/;
+  var split_res = str.split(reg, 2);
+  console.log(split_res);    // 输出结果：(2) ["We", "are"]
+</script>

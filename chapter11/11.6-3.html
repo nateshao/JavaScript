@@ -1,0 +1,8 @@
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+  var data = {'id': 2, 'name': 'Lucy', skill: ['PHP', 'JS']};
+  var seri_data = $.param(data);
+  var deseri_data = decodeURIComponent(seri_data);
+  console.log(seri_data);      // 输出结果：id=2&name=Lucy&skill%5B%5D=PHP&skill%5B%5D=JS
+  console.log(deseri_data);    // 输出结果：id=2&name=Lucy&skill[]=PHP&skill[]=JS
+</script>

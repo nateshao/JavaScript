@@ -1,0 +1,18 @@
+<script>
+  // 获取首次匹配结果
+  var str = 'AbC123abc456';
+  var reg = /abc/i;    // 定义正则对象
+  reg.exec(str);       // 匹配结果： ["AbC", index: 0, input: "AbC123abc456"]
+</script>
+
+<script>
+  var str = "It's is the shorthand of it is";
+  var reg1 = /it/gi;
+  str.match(reg1);    // 匹配结果：(2) ["It", "it"]
+  var reg2 = /^it/gi;
+  str.match(reg2);    // 匹配结果：["It"]
+  var reg3 = /s/gi;	
+  str.match(reg3);    // 匹配结果：(4) ["s", "s", "s", "s"]
+  var reg4 = /s$/gi;
+  str.match(reg4);    // 匹配结果：["s"]
+</script>

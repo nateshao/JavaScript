@@ -1,0 +1,11 @@
+<script>
+  function cal(num1, num2, fn) {
+    return fn(num1, num2);
+  }
+  console.log(cal(45, 55, function (a, b) {
+    return a + b;
+  }));
+  console.log(cal(10, 20, function (a, b) {
+    return a * b;
+  }));
+</script>

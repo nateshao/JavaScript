@@ -1,0 +1,23 @@
+<script>
+  var stu = ['Tom', 'Jimmy', 'Lucy'];
+  console.log(stu);     // 输出结果：(3) ["Tom", "Jimmy", "Lucy"]
+  delete stu[1];        // 删除数组中第2个元素
+  console.log(stu);     // 输出结果：(3) ["Tom", empty, "Lucy"]
+</script>
+
+<script>
+  // 传统方式
+  var arr = [1, 2, 3];
+  var a = arr[0];
+  var b = arr[1];
+  var c = arr[2];
+</script>
+
+<script>
+  var arr = [1, 2, 3];
+  [a, b] = arr;
+  console.log(a + ' - ' + b);     // 输出结果：1 - 2
+  var n1 = 4, n2 = 8;
+  [n1, n2] = [n2, n1];
+  console.log(n1 + ' - ' + n2);   // 输出结果：8 - 4
+</script>

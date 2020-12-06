@@ -1,0 +1,16 @@
+<body>
+  <script>
+    function jsonp(url, callback) {
+      var name = 'jsonp' + Math.random().toString().replace(/\D/g, '');
+      window[name] = callback;
+      var script = document.createElement('script');
+      var attr = document.createAttribute('src');
+      attr.value = url + '?callback=' + name;
+      script.setAttributeNode(attr);
+      document.body.appendChild(script);
+    };
+    jsonp('http://localhost:8082/test.php', function(data) {
+      console.log(data);
+    });
+  </script>
+</body>

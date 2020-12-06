@@ -1,0 +1,17 @@
+<script>
+  var total = prompt('请输入猴子的总数');
+  var kick = prompt('踢出第几只猴子');
+  var monkey = [];
+  for (var i = 1; i <= total; ++i) {    // 创建猴子数组
+    monkey.push(i);
+  }
+  i = 0;                                // 记录每次参与游戏（报数）的猴子位置
+  while (monkey.length > 1) {           // 在猴子数量大于1时进行循环
+    ++i;
+    head = monkey.shift();              // 从monkey数组的开头，取出猴子
+    if (i % kick != 0) {                // 判断是否踢出猴子，不踢则把该猴子添加到monkey数组的尾部
+      monkey.push(head);
+    }
+  }
+  console.log('猴王编号：' + monkey[0]);
+</script>

@@ -1,0 +1,16 @@
+<script>
+  // 元素值类型为字符型
+  var area = new Array('Beijing', 'Shanghai', 'Shenzhen');
+  // 元素值类型为数值型
+  var score = new Array(56, 68, 98, 44);
+  // 元素值类型为混合型
+  var mix = new Array(123, 'abc', null, true, undefined);
+  // 空数组
+  var arr1 = new Array();  // 或 var arr2 = new Array;
+</script>
+
+<script>
+  var weather = ['wind', 'fine',];      // 相当于：new Array('wind', 'fine',)
+  var empty = [];                       // 相当于：new Array
+  var mood = ['sad', , , ,'happy'];     // 控制台输出mood：(5) ["sad", empty × 3, "happy"]
+</script>

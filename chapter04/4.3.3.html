@@ -1,0 +1,15 @@
+<script>
+  var arr = ['a', 'b', 'c'];
+  arr.map(function(value, index) {
+    console.log(value, index);
+  });
+</script>
+
+<script>
+  var arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];    // 待转置的数组
+  var reverse = arr[1].map(function (col, i) {    // 利用i获取转置后数组元素的下标
+    return arr.map(function (row) {               // 返回转置后新组合而成的数组元素
+      return row[i];                              // 返回转置前数组元素的指定索引的元素
+    });
+  });
+</script>

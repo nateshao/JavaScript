@@ -1,0 +1,19 @@
+<style>
+  .boxes{width:10px;height:10px;background-color:red;}
+</style>
+<div class="boxes"></div>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+  $(document).keydown(function(event) {
+    var opt = event.which;            // 获取当前按下键盘的对应码值keyCode
+    var item = $('.boxes');           // 获取操作的元素
+    var left = item.offset().left;    // 获取元素距离文档左侧的位置，单位像素
+    var top = item.offset().top;      // 获取元素距离文档上面的位置，单位像素
+    switch(opt) {
+      case 37: item.offset({left: left - 1, top: top}); break;    // 左
+      case 38: item.offset({left: left, top: top - 1}); break;    // 上
+      case 39: item.offset({left: left + 1, top: top}); break;    // 右
+      case 40: item.offset({left: left, top: top + 1}); break;    // 下
+    }
+  });
+</script>

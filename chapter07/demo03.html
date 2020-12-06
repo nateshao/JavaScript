@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>元素属性操作</title>
+    <style>
+      .gray{background: #CCC;}
+      #thick{font-weight: bolder;}
+    </style>
+  </head>
+  <body>
+    <div>test word.</div>
+    <script>
+      // 获取div元素
+      var ele = document.getElementsByTagName('div')[0];
+      // ① 输出当前ele的属性个数
+      console.log('未操作前属性个数：' + ele.attributes.length);
+      // ② 为ele添加属性，并查看属性个数
+      ele.setAttribute('align', 'center');
+      ele.setAttribute('title', '测试文字');
+      ele.setAttribute('class', 'gray');
+      ele.setAttribute('id', 'thick');
+      ele.setAttribute('style', 'font-size:24px;border:1px solid green;');
+      console.log('添加属性后的属性个数：' + ele.attributes.length);
+      // ③ 获取ele的style属性值
+      console.log('获取style属性值：' + ele.getAttribute('style'));
+      // ④ 删除ele的style属性，并查看剩余属性情况
+      ele.removeAttribute('style');
+      console.log('查看所有属性：');
+      for (var i = 0; i < ele.attributes.length; ++i) {
+        console.log(ele.attributes[i]);
+      }
+    </script>
+  </body>
+</html>

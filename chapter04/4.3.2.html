@@ -1,0 +1,37 @@
+<body></body>
+
+<script>
+  // 方式1：函数表达式中省略函数名
+  var fn = function (num1, num2) {
+    return  num1 + num2;
+  };
+  fn(1, 2);
+  // 方式2：自调用方式
+  (function (num1, num2) {
+    return  num1 + num2;
+  })(2, 3);
+  // 方式3：处理事件
+  document.body.onclick  = function () {
+    alert('Hi, everybody!');
+  };
+</script>
+
+<script>
+  // 用法1：标准语法
+  (p1, p2, /* …, */ pN) => { statements }
+  // 用法2：返回值
+  (p1, p2, /* …, */ pN) => { return expression; }    // 或  (p1, p2, …, pN) => expression
+  // 用法3：含有一个参数
+  (singleParam) => { statements; }    // 或  singleParam => { statements; }
+  // 用法4：无参箭头函数
+  () => { statements; }    // 或   _ => { statements; }
+</script>
+
+<script>
+  // 设置1个参数
+  var fn1 = x => x + 2;
+  console.log(fn1(4));           // 输出结果：6
+  // 设置2个参数
+  var fn2 = (x, y) => x + y;
+  console.log(fn2(1, 2) );       // 输出结果：3
+</script>

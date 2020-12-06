@@ -1,0 +1,14 @@
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status < 200 || xhr.status >= 300 && xhr.status !== 304) {
+        alert('服务器异常');
+        return;
+      }
+      console.log(xhr.responseText);
+    }
+  };
+  xhr.open('GET', 'hello.php');
+  xhr.send();
+</script>

@@ -1,0 +1,13 @@
+<body>
+  <div class="list">
+    <ul><li>ONE</li><li>TWO</li><li>THREE</li></ul>
+  </div>
+  <div class="add">+添加</div>
+  <script src="jquery-1.12.4.min.js"></script>
+  <script>
+    $('.add').click(function() {
+      var str = '<li>FOUR</li>';
+      $('.list li:last-child').after(str);
+    });
+  </script>
+</body>

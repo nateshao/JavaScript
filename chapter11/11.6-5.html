@@ -1,0 +1,9 @@
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+  $(document).ajaxError(function() {
+    console.log('ajaxError');
+  });
+  $.post('index.php', {'id': 2, 'name': 'JS'}, function(msg) {
+    console.log(msg.id + '-' + msg.name);
+  }, 'xml');
+</script>

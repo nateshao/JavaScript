@@ -1,0 +1,39 @@
+<script>
+  function greet() {
+    console.log('Hello everybody!');
+  }
+</script>
+
+<script>
+  function maxNum(a, b) {
+    a = parseInt(a);
+    b = parseInt(b);
+    return a >= b ? a : b;
+  }
+</script>
+
+<script>
+  function transferParam() {
+    console.log(arguments.length);    // 获取用户实际传递的参数数量
+    console.log(arguments);           // 在控制台输出用户调用函数时传递的参数
+  }
+</script>
+
+<script>
+  function greet(name, say = 'Hi, I\'m ') {
+    console.log(say + name);
+  }
+</script>
+
+<script>
+  function transferParam(num1, ...theNums) {
+    theNums.unshift(num1);      // 在剩余参数数组的头部添加第一个参数
+    console.log(theNums);       // 在控制台输出用户调用函数时传递的参数
+  }
+</script>
+
+<script>
+  function transferParam(...theNums) {
+    console.log(theNums);       // 在控制台输出用户调用函数时传递的参数
+  }
+</script>

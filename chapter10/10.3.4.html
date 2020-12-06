@@ -1,0 +1,18 @@
+<script>
+  XMLHttpRequest.UNSENT;                    // 对应状态值0
+  XMLHttpRequest.OPENED;                    // 对应状态值1
+  XMLHttpRequest.HEADERS_RECEIVED;          // 对应状态值2
+  XMLHttpRequest.LOADING;                   // 对应状态值3
+  XMLHttpRequest.DONE;                      // 对应状态值4
+</script>
+
+<script>
+  var str = encodeURIComponent('A&B C');
+  var url = 'http://xxx/test.php?name=' + str;
+  console.log(url);                        // 输出结果：http://xxx/test.php?name=A%26B%20C
+</script>
+
+<script>
+  var str = 'A%26B%20C';
+  console.log(decodeURIComponent(str));    // 输出结果：A&B C
+</script>

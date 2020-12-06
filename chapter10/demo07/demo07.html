@@ -1,0 +1,5 @@
+<script>  var xhr = new XMLHttpRequest();  xhr.onreadystatechange = function() {    if (xhr.readyState === XMLHttpRequest.DONE) {      var data = xhr.responseXML;      var booklist = data.getElementsByTagName('booklist')[0];      console.log(booklist.childNodes);
+      var book = booklist.children[0];
+      console.log(book.children[0].innerHTML);               // 方式1
+      console.log(book.children[0].firstChild);              // 方式2（会加上引号）
+      console.log(book.children[0].firstChild.wholeText);    // 方式3    }  };  xhr.open('GET', 'xml.php');  xhr.send();</script>

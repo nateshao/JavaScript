@@ -1,0 +1,14 @@
+<script>
+  var i = 26;
+  function fn1() {        // 声明的第1个函数
+    var i = 24;
+    function fn2() {      // 声明的第2个函数
+      function fn3() {    // 声明的第3个函数
+        console.log(i);
+      }
+      fn3();
+    }
+    fn2();
+  }
+  fn1();
+</script>

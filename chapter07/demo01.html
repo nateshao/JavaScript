@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>获取操作的元素</title>
+  </head>
+  <body>
+    <div id="box">box</div>
+    <div class="bar">bar</div>
+    <div name="main">main</div>
+    <script>
+      console.log(document.getElementById('box'));            // 获取id为box的元素
+      console.log(document.getElementsByClassName('bar'));    // 获取所有class为bar的元素
+      console.log(document.getElementsByTagName('div'));      // 获取所有标签为div的元素
+      console.log(document.getElementsByName('main'));        // 获取所有name为main的元素
+    </script>
+    <script>
+      var box = document.getElementById('box');               // 根据id获取元素对象
+      var divs = document.getElementsByTagName('div');        // 根据标签名获取对象集合
+      console.log(divs[0] === box);                           // 输出结果：true
+    </script>
+    <script>
+      console.log(document.querySelector('div'));             // 获取匹配到的第1个div
+      console.log(document.querySelector('#box'));            // 获取id为box的第1个div
+      console.log(document.querySelector('.bar'));            // 获取class为bar的第1个div
+      console.log(document.querySelector('div[name]'));       // 获取含有name属性的第1个div
+      console.log(document.querySelector('div.bar'));         // 获取文档中class为bar的第1个div
+      console.log(document.querySelector('div#box'));         // 获取文档中id为box的第1个div
+    </script>
+  </body>
+</html>

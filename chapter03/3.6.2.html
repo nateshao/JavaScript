@@ -1,0 +1,9 @@
+<script>
+  var data = ['peach', 'pear', 26, '26', 'grape'];
+  // 从数组下标为3的位置开始检索数字26
+    console.log(data.includes(26, 3));       // 输出结果：false
+  // 从数组下标为data.length - 3 的位置查找数字26
+  console.log(data.includes(26, -3));        // 输出结果：true
+  // 判断变量data是否为数组
+  console.log(Array.isArray(data)); 
+</script>

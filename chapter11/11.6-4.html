@@ -1,0 +1,15 @@
+<form>
+  <p>姓名：<input type="text" name="username"></p>
+  <p>爱好：<input type="checkbox" name="hobby[]" value="swiming">游泳
+    <input type="checkbox" name="hobby[]" value="reading">读书
+    <input type="checkbox" name="hobby[]" value="running">跑步</p>
+  <p>描述：<textarea name="desc" cols="40" rows="5"></textarea></p>
+  <input type="button" value="提交">
+</form>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+  $('input[type=button]').on('click', function () {
+    console.log($('form').serialize());
+    console.log($('form').serializeArray());
+  });
+</script>

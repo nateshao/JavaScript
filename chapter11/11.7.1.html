@@ -1,0 +1,43 @@
+<script src="jquery-1.12.4.min.js"></script>
+
+<script>
+  (function($){
+    $.fn.方法名 = function() {
+      // 实现插件的代码
+      // ……
+    };
+  })(jQuery);
+</script>
+
+<script>
+  jQuery.fn.extend({
+    方法名1: function(参数列表) {
+      // 实现插件的代码
+      // ……
+    },
+    方法名2: function(参数列表) {
+      // 实现插件的代码
+      // ……
+    }
+  });
+</script>
+
+<script>
+  jQuery.extend({
+    方法名1: function(参数列表) {
+      // 实现插件的代码
+      // ……
+    },
+    方法2: function(参数列表) {
+      // 实现插件的代码
+      // ……
+    }
+  });
+</script>
+
+<script>
+  $.expr[':'].方法名称 = function(obj) {
+    // 自定义选择器代码
+    return 匹配HTML元素的条件;
+  };
+</script>

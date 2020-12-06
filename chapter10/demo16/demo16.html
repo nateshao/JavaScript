@@ -1,0 +1,2 @@
+<script>  var ws = new WebSocket('ws://127.0.0.1:2000');  ws.onopen = function() {    console.log('连接成功');  };  ws.onmessage = function(e) {    console.log('收到服务器消息：' + e.data);  };
+</script>

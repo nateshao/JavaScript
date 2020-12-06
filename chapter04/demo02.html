@@ -1,0 +1,10 @@
+<script>
+  function getSum() {                 // 定义函数
+    var sum = 0;                      // 保存参数和
+    for (i in arguments) {            // 遍历参数，并累加
+      sum += arguments[i];
+    }
+    return sum;                       // 返回函数处理结果
+  }
+  console.log(getSum(10, 20, 30));    // 函数调用
+</script>

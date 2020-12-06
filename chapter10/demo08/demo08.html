@@ -1,0 +1,20 @@
+<script>
+  var obj = {name: 'Tom', age: 24};     // 准备要发送的数据
+  var json = JSON.stringify(obj);       // 将对象转换为JSON字符串
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'json.php');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      var obj = JSON.parse(xhr.responseText);    // 将JSON字符串转换为对象
+      console.log(obj);
+      /*
+        console.log(typeof xhr.responseText);     // 查看服务器返回数据的类型：string
+        eval('var obj = ' + xhr.responseText);    // 用eval()函数将字符型转成对象
+        console.log(obj.name);                    // 输出结果：Tom
+        console.log(obj.age);                     // 输出结果：24
+      */
+    }
+  };
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.send('json=' + encodeURIComponent(json));
+</script>

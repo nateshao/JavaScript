@@ -1,0 +1,16 @@
+<script>
+  var arr = [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i'], ['j', 'k', 'l']];
+  var res = [];
+  for (var i = 0; i < arr[0].length; ++i) {    // 遍历res中的所有元素
+    res[i] = [];
+    for(var j = 0; j < arr.length; ++j){       // 遍历res元素中的所有元素
+      res[i][j] = arr[j][i];                   // 为二维数组赋值
+    }
+  }
+  console.group('转置前：');
+  console.log(arr);
+  console.groupEnd();
+  console.group('转置后：');
+  console.log(res);
+  console.groupEnd();
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>日历</title>
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="jquery-ui/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <div id="datepicker"></div>
+    <script>
+      var m = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
+      var d = ['日', '一', '二', '三', '四', '五', '六'];
+      $('#datepicker').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        firstDay: 1,
+        showOtherMonths: true,
+        monthNamesShort: m,
+        dayNamesMin: d,
+      });
+    </script>
+  </body>
+</html>

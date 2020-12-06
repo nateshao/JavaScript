@@ -1,0 +1,26 @@
+<script>
+  function info() {
+    var age = 18;
+  }
+  console.log(age);    // 输出结果：Uncaught ReferenceError: age is not defined
+</script>
+
+<script>
+  // 第1种方式：利用return返回
+  function test(num) {
+    num = num + 1;
+    return num;
+  }
+  var num = test(24);
+  console.log(num);       // 输出结果：25
+</script>
+
+<script>
+  // 第2种方式：利用全局变量保存
+  var memory;
+  function test(num) {
+    memory = num + 1;
+  }
+  test(24);
+  console.log(memory);    // 输出结果：25
+</script>

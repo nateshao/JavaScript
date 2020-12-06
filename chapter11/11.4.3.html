@@ -1,0 +1,49 @@
+<script src="jquery-1.12.4.min.js"></script>
+
+<script>
+  // on()方法绑定事件
+  $('div').on('click', function() {
+    console.log('已完成单点击');
+  });
+  // off()方法取消绑定
+  $('div').off('click');
+</script>
+
+<script>
+  $('div').one('click', function() {
+    console.log('已完成1次单点击');
+  });
+</script>
+
+<script>
+  $('div').on('mouseover mouseout', function() {
+    console.log('鼠标移入或移出');
+  });
+</script>
+
+<script>
+  $('div').on({
+    mouseover: function() {
+      console.log('鼠标移入');
+    },
+    mouseout: function() {
+      console.log('鼠标移出');
+    }
+  });
+</script>
+
+<script>
+  $('body').on('click', 'div', function() {
+    console.log('收到');
+  });
+  // 测试：创建<div>元素
+  $('body').append('<div>测试</div>');
+</script>
+
+<script>
+  $('div').hover(function() {
+    console.log('鼠标移入')
+  }, function() {
+    console.log('鼠标移出');
+  });
+</script>

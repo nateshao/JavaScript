@@ -1,0 +1,71 @@
+<button id="btn" class="btnClass">获取event对象</button>
+<script>
+  var btn = document.getElementById('btn');
+  btn.onclick = function(e) {
+    var obj = event.target || window.event.srcElement; // 处理兼容问题：触发此事件的元素对象
+    console.log(obj.nodeName);      // 获取元素节点名，如：BUTTON
+    console.log(obj.id);            // 获取元素的id值，如：btn
+    console.log(obj.className);     // 获取元素的class名，如：btnClass
+    console.log(obj.innerText);     // 获取元素的文本值，如：获取event对象
+  };
+</script>
+
+<style>
+  #red{background:red;width:120px;height:120px;}
+  #green{background:green;width:80px;height:80px;}
+  #yellow{background:yellow;width:40px;height:40px;}
+</style>
+<div id="red">
+  <div id="green">
+    <div id="yellow"></div>
+  </div>
+</div>
+<script>
+  // 分别获取互相嵌套的div元素
+  var red = document.getElementById('red');
+  var green = document.getElementById('green');
+  var yellow = document.getElementById('yellow');
+  // 分别为互相嵌套的div元素添加单击事件
+  red.onclick = function() {
+    console.log('red');
+  };
+  green.onclick = function() {
+    console.log('green');
+  };
+  yellow.onclick = function() {
+    console.log('yellow');
+  };
+</script>
+
+<script>
+  red.onclick = function(e) {
+    // func(e);
+    console.log('red');
+  };
+  green.onclick = function(e) {
+    // func(e);
+    console.log('green');
+  };
+  yellow.onclick = function(e) {
+    // func(e);
+    console.log('yellow');
+  };
+  function func(e) {
+    if (window.event) {    // 早期版本的的浏览器
+      window.event.cancelBubble = true;
+    } else {               //标准浏览器
+      e.stopPropagation();
+    }
+  }
+</script>
+
+<a id="test" href="http://www.example.com">默认链接</a>
+<script>
+  document.getElementById('test').onclick = function(e) {
+    if (window.event) {    // 早期版本IE浏览器
+      window.event.returnValue = false;
+    } else {               //标准浏览器
+      e.preventDefault();
+    }
+  };
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>自定义全选与反选插件</title>
+   <link rel="stylesheet" href="case05.css">
+  </head>
+  <body>
+    <div>
+      <table>
+        <tr><th>操作</th><th>编号</th><th>图书名称</th><th>价格</th></tr>
+        <tr>
+          <td><input type="checkbox" value="1"></td>
+          <td>1</td><td>测试1</td><td>39.90</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" value="1"></td>
+          <td>2</td><td>测试2</td><td>39.90</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" value="1"></td>
+          <td>3</td><td>测试3</td><td>39.90</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" value="1"></td>
+          <td>4</td><td>测试4</td><td>39.90</td>
+        </tr>
+        <!-- 可多添加几行用于测试 -->
+        <tr>
+          <td colspan="4">
+            <input type="button" value="全选" id="checkAll">
+            <input type="button" value="全不选" id="checkNone">
+            <input type="button" value="反选" id="checkInvert">
+          </td>
+        <tr>
+      </table>
+    </div>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="case05.js"></script>
+    <script>
+      $('#checkAll').on('click', function() {
+        $(':checkbox').checkAll();
+      });
+      $('#checkNone').on('click', function() {
+        $(':checkbox').checkNone();
+      });
+      $('#checkInvert').on('click', function( ){
+        $(':checkbox').checkInvert();
+      });
+    </script>
+  </body>
+</html>

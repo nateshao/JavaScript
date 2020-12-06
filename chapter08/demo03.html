@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <title>按Enter键切换</title>
+  </head>
+  <body>
+    <p>用户姓名：<input type="text"></p>
+    <p>电子邮箱：<input type="text"></p>
+    <p>手机号码：<input type="text"></p>
+    <p>个人描述：<input type="text"></p>
+    <script>      var inputs = document.getElementsByTagName('input');      for (var i = 0; i < inputs.length; ++i) {        inputs[i].onkeydown = function(e) {          // 获取事件对象的兼容处理          var e = event || window.event;          // 判断按下的是不是回车，如果是，让下一个input获取焦点          if (e.keyCode === 13) {            // 遍历所有input框，找到当前input的下标            for (var i = 0; i < inputs.length; ++i) {              if (inputs[i] === this) {                // 计算下一个input元素的下标                var index = i + 1 >= inputs.length ? 0 : i + 1;                break;              }            }            // 如果下一个input还是文本框，则获取键盘焦点            if (inputs[index].type === 'text') {              inputs[index].focus();            }          }        };      }    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<script>  function xhr(options) {    return new Promise(function(resolve, reject) {      var xhr = new XMLHttpRequest();      xhr.open(options.type || 'GET', options.url);      xhr.onreadystatechange = function() {        if (xhr.readyState === XMLHttpRequest.DONE) {          if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {            resolve(xhr.responseText);     // 成功时执行的函数          } else {            reject('服务器发生错误。');    // 失败时执行的函数          }        }      };      xhr.send(options.data);    });  }
+  
+  var fd = new FormData();
+  fd.append('num', 100);
+  
+  xhr({url: 'test.php', type: 'POST', data: fd})
+  .then(function(data) {
+    console.log('请求成功：' + data);
+  }, function(err) {
+    console.log('请求失败：' + err);
+  });
+  
+  xhr({url: '1.txt', type: 'POST', data: fd})
+  .then(function(data) {
+    console.log('请求成功：' + data);
+  })
+  .catch(function(err) {
+    console.log('发生异常：' + err);
+  });
+  
+  xhr({url: 'test.php', type: 'POST', data: fd})  .then(function(data) {    console.log('第1次请求结果：' + data);    return xhr({url: 'test.php', type: 'POST', data: fd});  })  .then(function(data) {    console.log('第2次请求结果：' + data);  })  .catch(function(err) {    console.log('发生异常：' + err);  });</script>

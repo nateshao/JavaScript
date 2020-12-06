@@ -1,0 +1,11 @@
+<button id="btn">单击</button>
+<div id="demo" style="display: none">这是一个惊喜！</div>
+<script>
+  function $(id) {    // 根据id获取元素对象
+    return document.getElementById(id);
+  }
+  function show() {   // 显示id为demo的元素
+    $('demo').style.display = 'block';
+  }
+  $('btn').onclick = show;
+</script>

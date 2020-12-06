@@ -1,0 +1,23 @@
+<style>
+  div{position:absolute;background:red;width:50px;height:50px;display:none;}
+</style>
+<p>对列长度为: <span></span></p><div></div>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+  var div = $('div');    // 获取指定动画的元素
+  runQue();              // 执行队列动画
+  showQue();             // 显示队列中的动画
+  function runQue() {
+    div.show('slow')
+    .animate({left: '+=200'}, 2000)
+    .queue(function() {
+      $(this).css('background', 'green').dequeue();
+    })
+    .animate({left: '-=200'}, 1500)
+    .slideUp('normal', runQue);
+  }
+  function showQue() {
+    $('span').text(div.queue('fx').length);
+    setTimeout(showQue, 100);
+  }
+</script>

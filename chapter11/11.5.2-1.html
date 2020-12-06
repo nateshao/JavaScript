@@ -1,0 +1,11 @@
+<input id="btn" type="submit" value="开始动画">
+<div></div>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+  $('#btn').click(function () {
+    $('div').css({background: 'red', width: 0, height: 0});    // 设置div的初始化CSS
+    var params = {width: '100px', height: '100px'};	           // 设置div变化后最终的效果
+    var settings = $.speed(2000, 'linear');                     // 设置动画时长、切换效果
+    $('div').animate(params, settings);                        // 添加自定义动画
+  });
+</script>

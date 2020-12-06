@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>更改URL</title>
+  </head>
+  <body>
+    <input type="button" value="载入新文档" onclick="newPage()">    <input type="button" value="刷新页面" onclick="freshPage()">    <p id="time"></p>    <script>      // 获取并显示当前页面载入的时间      var ds = new Date(), d = ds.getDate();      var t = ds.toLocaleTimeString();      document.getElementById('time').innerHTML = t;      // 载入新文档      function newPage() {        window.location.assign('http://www.example.com')      }      // 刷新文档      function freshPage() {        location.reload(true);      }    </script>
+  </body>
+</html>

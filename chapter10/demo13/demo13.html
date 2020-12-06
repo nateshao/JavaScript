@@ -1,0 +1,19 @@
+<form id="form">
+  姓名：<input type="text" name="name"><br>
+  密码：<input type="password" name="password"><br>
+  邮箱：<input type="text" name="email"><br>
+  <input type="submit" value="提交">
+</form>
+<script>
+  document.getElementById('form').onsubmit = function() {
+    var fd = new FormData(this);
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'test.php');
+    xhr.send(fd);
+    return false;  // 阻止表单默认的提交操作
+  };
+  /*
+    var fd = new FormData();
+    fd.append(name, value);
+  */
+</script>

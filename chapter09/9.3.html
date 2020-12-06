@@ -1,0 +1,14 @@
+<script>
+  var reg = /\d\d\d\d\d\d/gi;    // 正则对象
+  var reg = /\d{6}/gi;           // 正则对象
+</script>
+
+<script>
+  var str = 'webWEBWebwEb';
+  var reg1 = /w.*b/gi;    // 贪婪匹配
+  var reg2 = /w.*?b/gi;   // 懒惰匹配
+  // 输出结果为：["webWEBWebwEb", index: 0, input: "webWEBWebwEb"]
+  console.log(reg1.exec(str));
+  // 输出结果为：["web", index: 0, input: "webWEBWebwEb"]
+  console.log(reg2.exec(str));
+</script>

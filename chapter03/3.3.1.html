@@ -1,0 +1,26 @@
+<script>
+  var arr1 = [78, 88, 98];
+  var arr2 = ['a', , , , 'b', 'c'];
+  console.log(arr1.length);   // 输出结果为：3
+  console.log(arr2.length);   // 输出结果为：6
+</script>
+
+<script>
+  var arr1 = [];
+  arr1.length = 5;
+  console.log(arr1);      // 输出结果：(5) [empty × 5]
+  var arr2 = [1, 2, 3];
+  arr2.length = 4; 
+  console.log(arr2);      // 输出结果：(4) [1, 2, 3, empty]
+  var arr3 = ['a', 'b'];
+  arr3.length = 2; 
+  console.log(arr3);      // 输出结果：(2) ["a", "b"]
+  var arr4 = ['hehe', 'xixi', 'gugu', 'jiujiu'];
+  arr4.length = 3; 
+  console.log(arr4);      // 输出结果：(3) ["hehe", "xixi", "gugu"
+</script>
+
+<script>
+  var arr = new Array(3);
+  console.log(arr);       // 输出结果：(3) [empty × 3]
+</script>

@@ -1,0 +1,12 @@
+<script>
+  var a = 'one';                   // 全局变量
+  function test() {
+    var a = 'two';                 // 局部变量
+    console.log(a);
+  }
+  test();
+  for (let a = 0; a < 3; ++a) {    // 块级变量（ES6新增）
+    console.log(a);
+  }
+  console.log(a);
+</script>

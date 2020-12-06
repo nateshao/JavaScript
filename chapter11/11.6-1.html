@@ -1,0 +1,6 @@
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+  $.post('index.php', {'id': 2, 'name': 'JS'}, function(msg) {
+    console.log(msg.id + '-' + msg.name);    // 输出结果：2-JS
+  }, 'json');
+</script>

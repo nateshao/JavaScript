@@ -1,0 +1,5 @@
+<script>  // 创建WebSocket对象，连接服务器  var ws = new WebSocket('ws://127.0.0.1:2000');   // 当连接成功时执行的回调函数  ws.onopen = function() {     console.log('连接成功');    ws.send('Tom');    console.log('向服务端发送一个字符串：Tom');  };  // 当收到服务器消息时执行的回调函数，event是事件对象
+   ws.onmessage = function(event) {
+     console.log('收到服务器消息：' + event.data);
+   };
+</script>

@@ -1,0 +1,11 @@
+<script>
+  var area = 'Beijing';
+  function getArea(){
+    return this.area;
+  }
+  console.log(area);                   // 访问变量，输出结果：Beijing
+  console.log(window.area);            // 访问window对象的属性，输出结果：Beijing
+  console.log(getArea());              // 调用自定义函数，输出结果：Beijing
+  console.log(window.getArea());       // 调用window对象的方法，输出结果：Beijing
+  console.log(window.Number(area));    // 调用内置函数，将变量area转换为数值型，输出结果：NaN
+</script>

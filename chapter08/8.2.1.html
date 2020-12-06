@@ -1,0 +1,8 @@
+<button id="btn">获取event对象</button>
+<script>
+  var btn = document.getElementById('btn');
+  btn.onclick = function(e) {
+    var event = e || window.event;    // 获取事件对象的兼容处理
+    console.log(event);
+  };
+</script>

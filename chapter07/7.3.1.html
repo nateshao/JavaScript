@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script>
+      // 假设document中的第1个子节点是html
+      console.log(document.firstChild === document.documentElement);    // 比较结果：true
+      // 假设html中的最后1个子节点是body
+      console.log(document.firstChild.lastChild === document.body);     // 比较结果：true
+    </script>
+  </body>
+</html>

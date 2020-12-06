@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>计数器</title>
+  </head>
+  <body>
+    <input type="button" value="开始计数" onclick="startCount()">
+    <input id="num" type="text">
+    <input type="button" value="停止计数" onclick="stopCount()">
+    <script>
+      var timer = null, c = 0;
+      function timedCount() {       // 在文本框中显示数据
+        document.getElementById('num').value = c;
+        ++c;                        // 显示数据加1
+      }
+      function startCount() {       // 开始间歇调用
+        timer = setInterval(timedCount, 1000);
+      }
+      function stopCount() {        // 清除间歇调用
+        clearInterval(timer);
+      }
+    </script>
+  </body>
+</html>

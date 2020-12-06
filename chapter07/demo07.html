@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>删除节点和节点属性</title>
+  </head>
+  <body>
+    <ul>
+      <li>PHP</li><li>JavaScript</li><li class="strong">UI</li>
+    </ul>
+    <script>      var child = document.getElementsByTagName('li')[2];    // 获取第3个li元素      var attr = child.getAttributeNode('class');            // 获取元素的class属性值      console.log(child.removeAttributeNode(attr));          // 删除元素的class属性值      console.log(child.parentNode.removeChild(child));      // 删除元素    </script>
+  </body>
+</html>

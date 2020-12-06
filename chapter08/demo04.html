@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <title>表单事件</title>
+  </head>
+  <body>    <form id="register">      <label>用户名：<input id="user" type="text"></label>      <input type="submit" value="提交">
+      <input type="reset" value="重置">    </form>    <script>      // 获取表单和需要验证的元素对象      var regist = document.getElementById('register');      var user = document.getElementById('user');      regist.onsubmit = function(event) {    // 为表单添加submit事件        // 获取事件对象、输出当前事件类型        var event = event || window.event;        console.log(event.type);        // 判断表单元素内容是否为空，若为空，则返回false，否则返回true        return user.value ? true : false;      }      regist.onreset = function (event) {    // 为表单添加reset事件        // 获取事件对象、输出当前事件类型        var event = event || window.event;        console.log(event.type);        // 判断是否确认重置，按“确定”则返回true，按“取消”返回false        return confirm('请确认是否要重置信息，重置后表单填写的内容将全部清空');      }    </script>
+  </body>
+</html>

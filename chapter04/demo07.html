@@ -1,0 +1,16 @@
+<script>
+  function fn() {
+    var times = 0;
+    var c = function () {
+      return ++times;
+    };
+    return c;
+  }
+  var count = fn();    // 保存fn()返回的函数，此时count就是一个闭包
+  // 访问测试
+  console.log(count());
+  console.log(count());
+  console.log(count());
+  console.log(count());
+  console.log(count());
+</script>

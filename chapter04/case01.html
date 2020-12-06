@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>字符串大小写转换</title>
+  </head>
+  <body>
+    <h2>大小写转换</h2>
+    <p>原数据：<input id="old" type="text"></p>
+    <p>
+      操  作：
+      <input type="button" value="转大写" onclick="deal('upper')">
+      <input type="button" value="转小写" onclick="deal('lower')">
+    </p>
+    <p>新数据：<input id="new" type="text"></p>
+    <script>
+      function deal(opt) {
+        var str = document.getElementById('old').value;
+        switch (opt) {
+          case 'upper':
+            str = str.toUpperCase();
+          break;
+          case 'lower':
+            str = str.toLowerCase();
+          break;
+        }
+        document.getElementById('new').value = str;
+      } 
+    </script>
+  </body>
+</html>

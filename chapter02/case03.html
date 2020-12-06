@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>九九乘法表</title>
+    <style>
+      table{border-collapse:collapse;}
+      table td{border:1px solid #ccc;padding:3px 6px;}
+    </style>
+  </head>
+  <body>
+    <div id="table"></div>
+    <script>
+      var str = '<table>';
+      for (var i = 1; i < 10; ++i) {    // 遍历表中所有的行
+        str += '<tr>';
+        for (var j = 1; j <= i; ++j) {  // 遍历每行中的列
+          // 拼接单元格
+          str += '<td>' + j + '×' + i + '=' + (j * i) + '</td>';
+        }
+        str += '</tr>';
+      }
+      str += '</table>';
+      // 将拼接后的字符串显示到页面中
+      document.getElementById('table').innerHTML = str;
+    </script>
+  </body>
+</html>

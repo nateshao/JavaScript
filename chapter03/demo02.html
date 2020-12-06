@@ -1,0 +1,10 @@
+<div class="nav" id="navlist"></div>
+<script>
+  var navlist = ['首页', '免费资源', '课程中心', 'IT学院', '学员故事', '线上学院', '技术社区'];
+  var str = '<ul>';
+  for (var i in navlist) {
+    str += '<li><a>' + navlist[i] + '</a></li>';
+  }
+  str += '</ul>';
+  document.getElementById('navlist').innerHTML = str;
+</script>

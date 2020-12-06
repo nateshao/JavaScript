@@ -1,0 +1,22 @@
+<script>
+  var num1 = 12, num2 = '34', sum = 0;     // 声明变量并赋值
+  sum = num1 + num2;                       // 变量进行相加运算
+  console.log(sum);                        // 输出结果：1234
+</script>
+
+<script>
+  console.log(typeof num1);                // 输出结果：number
+  console.log(typeof num2);                // 输出结果：string
+  console.log(typeof sum);                 // 输出结果：string
+</script>
+
+<script>
+  var data = null;           // 待判断的数据
+  var type = 'Null';         // 数据类型，开始字母要大写，如Boolean、String、Number、Undefined等
+  // 检测数据类型的表达式，若是指定的type型，则返回true，否则返回false
+  var result = Object.prototype.toString.call(data) == '[object ' + type + ']';
+  // 输出比较结果
+  console.log(result);
+  // 输出检测结果
+  console.log(Object.prototype.toString.call(data));
+</script>

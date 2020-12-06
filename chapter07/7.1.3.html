@@ -1,0 +1,21 @@
+<div id="test"></div>
+<script>
+  var test = document.getElementById('test');
+  console.log(test);             // 输出结果：<div id="test"></div>
+  console.log(test.__proto__);   // 输出结果：HTMLDivElement { …… }
+</script>
+
+<div id="test"></div>
+<script>
+  var test = document.getElementById('test');
+  console.log(test.nodeName);        // 通过节点方式获取节点名，输出结果：DIV
+  console.log(test.tagName);         // 通过元素方式获取标签名，输出结果：DIV
+  console.log(document.nodeName);    // document属于节点，输出结果：#document
+  console.log(document.tagName);     // document不属于元素，输出结果：undefined
+</script>
+
+<script>
+  var test = document.getElementById('test');
+  test.nodeType === Node.ELEMENT_NODE;         // 比较结果：true
+  document.nodeType === Node.DOCUMENT_NODE;    // 比较结果：true
+<script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <title>验证用户名和密码是否为空</title>
+    <style>
+      body{background:#ddd;}
+      .box{background:#fff;padding:20px 30px;width:400px;margin: 0 auto;text-align:center;}
+      .btn{width:180px;height:40px;background:#3388ff;border:1px solid #fff;color:#fff;font-size:14px;}
+      .ipt{width:260px;padding:4px 2px;}
+      .tips{width:440px;height:30px;margin:5px auto;background:#fff;color:red;border:1px solid #ccc;display:none;line-height:30px;padding-left:20px;font-size:13px;}
+    </style>
+  </head>
+  <body>
+    <div id="tips" class="tips"></div>
+    <div class="box">
+      <p><label>用户名：<input id="user" class="ipt" type="text"></label></p>
+      <p><label>密　码：<input id="pass" class="ipt" type="password"></label></p>
+      <p><button id="login" class="btn">登录</button></p>
+    </div>
+    <script>      window.onload = function() {        addBlur($('user'));      // 检测id为user的元素失去焦点后，value值是否为空        addBlur($('pass'));      // 检测id为pass的元素失去焦点后，value值是否为空      };      function $(obj) {          // 根据id获取指定元素        return document.getElementById(obj);      }      function addBlur(obj) {    // 为指定元素添加失去焦点事件        obj.onblur = function() {          isEmpty(this);        };      }      function isEmpty(obj) {    // 检测表单是否为空        if (obj.value === '') {          $('tips').style.display = 'block';          $('tips').innerHTML = '注意：输入内容不能为空! ';        } else {          $('tips').style.display = 'none';        }      }    </script>
+  </body>
+</html>

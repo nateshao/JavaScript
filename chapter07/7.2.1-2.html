@@ -1,0 +1,22 @@
+<ul id="ul">
+  <li>PHP</li><li>JavaScript</li>
+  <ul><li>jQuery</li><ul>
+</ul>
+<script>
+  var lis = document.getElementById('ul').getElementsByTagName('li');
+  console.log(lis);    // 输出结果：(3) [li, li, li]
+</script>
+
+<script>
+  var lis = document.getElementById('ul').children;
+  console.log(lis);    // 输出结果：(3) [li, li, ul]
+</script>
+
+<li id="test" name="test">test</li>
+<script>
+  var lis1 = document.getElementsByTagName('li');    // 获取标签名为li的对象集合
+  var test = document.getElementById('test');        // 获取id为test的li元素对象
+  console.log(lis1.test === test);                   // 比较结果：true
+  var lis2 = document.getElementsByName('test');     // 获取name名为test的对象集合
+  console.log(lis1.test === lis2[0]);                // 比较结果：true
+</script>

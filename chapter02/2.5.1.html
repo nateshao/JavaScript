@@ -1,0 +1,40 @@
+<script>
+  var age = 0;
+  if (age >= 18) {
+    console.log('已成年');
+  }
+</script>
+
+<script>
+  var age = 0;
+  if (age >= 18) {
+    console.log('已成年');
+  } else {
+    console.log('未成年');
+  }
+</script>
+
+<script>
+  var score = 0;
+  if (score >= 90) {
+    console.log('优秀');
+  } else if (score >= 80){
+    console.log('良好');
+  } else if (score >= 70){
+    console.log('中等');
+  } else if (score >= 60){
+    console.log('及格');
+  } else {
+    console.log('不及格');
+  }
+</script>
+
+<script>
+  var score = 0;
+  switch ( parseInt(score/10) ) {
+    case 10:  // 90~100为优
+    case 9:  console.log('优');  break;
+    case 8:  console.log('良');  break;
+    default: console.log('差');
+  }
+</script>

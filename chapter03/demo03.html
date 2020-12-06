@@ -1,0 +1,11 @@
+<script>
+  var arr = [[12, 59, 66], [100, 888]];    // 待求和的二维数组
+  var sum = 0;
+  for (var i in arr) {         // 遍历数组arr
+    for (var j in arr[i]) {    // 遍历数组arr的元素
+      sum += arr[i][j];        // 二维数组元素累计相加
+    }
+  }
+  console.log('待求和的二维数组：' + arr);
+  console.log('二维数组arr求和等于：' + sum);
+</script>

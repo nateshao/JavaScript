@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>进度条文件上传</title>
+    <style>
+      .progress{display:inline-block;width:200px;height:8px;border-radius:4px;border:1px solid #ccc;line-height:4px;margin-right:5px;padding:2px}
+      .progress i{display:inline-block;width:0%;height:100%;border-radius:4px;background:#71c371}
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <input type="file" name="file">
+      <input id="upload" type="button" value="上传">
+    </form>
+    <p>
+      上传进度：<span class="progress"><i id="bar"></i></span>
+      <span id="per">0%</span>
+    </p>
+    <p id="download"></p>
+    <script>
+      document.getElementById('upload').onclick = function() {
+        var form = document.getElementById('form');
+        var fd = new FormData(form);
+        var bar = document.getElementById('bar');            // 进度条
+        var per = document.getElementById('per');            // 百分比值
+        var down = document.getElementById('download');      // 下载地址
+        var xhr = new XMLHttpRequest();
+        xhr.upload.onprogress = function(e) {
+          var num = Math.floor(e.loaded / e.total * 100);    // 计算百分比
+          bar.style.width = num + '%';
+          per.innerHTML = num + '%';
+        };
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status < 200 || xhr.status >= 300 && xhr.status !== 304) {
+              throw new Error('文件上传失败，服务器状态异常。');
+            }
+            var name = xhr.responseText;
+            if (name == '') {
+              throw new Error('服务器保存文件失败。');
+            }
+            down.innerHTML = '文件上传成功。<a href="' + name + '">下载文件</a>';
+          }
+        };
+        xhr.open('POST', 'upload.php');
+        xhr.send(fd);
+      };
+    </script>
+  </body>
+</html>

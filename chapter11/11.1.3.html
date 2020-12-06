@@ -1,0 +1,14 @@
+<body></body>
+<script>
+  var h2 = document.createElement('h2');             // 创建h2元素节点
+  var text = document.createTextNode('测试');        // 创建文本节点
+  var attr = document.createAttribute('align');      // 创建属性节点
+  attr.value = 'center';                             // 为属性节点赋值
+  h2.setAttributeNode(attr);                         // 为h2元素添加属性节点
+  h2.appendChild(text);                              // 为h2元素添加文本节点
+  document.querySelector('body').appendChild(h2);    // 将h2节点追加为body元素的子节点
+</script>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+  $('<h2 align="center">测试</h2>').appendTo('body');
+</script>

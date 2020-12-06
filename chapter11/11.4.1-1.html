@@ -1,0 +1,14 @@
+<p>用户名称：<input type="text" name="uname"></p>
+<p>电子邮箱：<input type="text" name="email"></p>
+<p>手机号码：<input type="text" name="tel"></p>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+  $('input[type=text]').focus(function() {    // 文本框获取焦点
+    var tips = $('<span></span>');
+    tips.html('请按要求输入');
+    $('input:focus').after(tips);
+  });
+  $('input[type=text]').blur(function() {     // 文本框失去焦点
+    $(this).next().remove();
+  });
+</script>
