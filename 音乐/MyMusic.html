@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/MyMusic.css">
+</head>
+
+<body>
+    <div class="bigbox">
+        <!-- 导航栏 -->
+        <div class="header">
+            <!-- 列表标签 -->
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#" target="_blank">打字游戏</a></li>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">首页</a></li>
+            </ul>
+        </div>
+        <hr>
+        <div class="video">
+            <video id="video" src="./img/MyMusicVideo/video/三维动画短片.mp4" controls></video>
+            <img onclick="playing(0)" src="./img/MyMusicVideo/pause.png" alt="">
+            <span>三维动画短片</span>
+        </div>
+        <div class="audio">
+            <audio id="audio" src="./img/MyMusicVideo/music/Tell Me Why.mp3"></audio>
+            <img src="./img/MyMusicVideo/sky.gif" alt="">
+            <input id="ipt" type="range" min="0" max="1" step="0.1" onchange="change()">
+            <div id="name">
+                Tell Me Why
+            </div>
+            <div class="btn">
+                <button onclick="previous()">
+                    <img src="./img/MyMusicVideo/previous.png" alt="">
+                </button>
+                <button id="pause" onclick="toggle()">
+                    <img src="./img/MyMusicVideo/pause.png" alt="">
+                </button>
+                <button onclick="next()">
+                    <img src="./img/MyMusicVideo/next.png" alt="">
+                </button>
+                
+            </div>
+            <div class="newBtn">
+                <button id="dowmload">
+                    <img src="./img/MyMusicVideo/下载.png" alt="">
+                </button>
+                <button id="share">
+                    <img src="./img/MyMusicVideo/分享.png" alt="">
+                </button>
+                <button id="discuss">
+                    <img src="./img/MyMusicVideo/评论.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/MyMusic.js"></script>
+</body>
+
+</html>

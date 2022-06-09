@@ -1,0 +1,273 @@
+/* 设置全局背景色 */
+body {
+    background-color: #DEB887;
+    font-family: "微软雅黑";
+    height: 100%;
+}
+
+/* 设置版心 */
+.bigbox {
+    background-color: #FFEBCD;
+    width: 1000px;
+    height: 1500px;
+    margin: auto;
+    /* 添加阴影 */
+    box-shadow: 10px 10px 10px 0px black;
+    padding: 10px;
+}
+
+/* 设置导航栏 */
+.header {
+    /* display: block; */
+    width: 1000px;
+    height: 50px;
+    /* background-color: royalblue; */
+}
+
+.header>ul {
+    /* 取消列表项的符号 */
+    list-style: none;
+    margin-left: 160px;
+    /* margin-bottom: 10px; */
+    /* margin: 0 auto; */
+}
+
+.header>ul>li {
+    /* 设置浮动 */
+    float: left;
+}
+
+/* 设置a标签点击前跟点击后的效果 */
+.header>ul>li>a:link,
+a:visited {
+    display: block;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #DEB887;
+    color: white;
+    /* 取消a标签的下划线  */
+    text-decoration: none;
+}
+
+.header>ul>li>a:hover {
+    background-color: rgb(210, 105, 30);
+}
+
+/* 设置分割线 */
+hr {
+    border: 1px solid black;
+    background-color: black;
+    width: 80%;
+    margin-top: 0;
+}
+
+/* 调查问卷 */
+.questionnaire {
+    float: right;
+    margin-right: 50px;
+}
+
+.questionnaire span {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.questionnaire>a {
+    color: skyblue;
+    font-size: 20px;
+}
+
+.imgs {
+    width: 500px;
+    height: 300px;
+    /* background-color: rebeccapurple; */
+    margin: 50px 0 0 40px;
+    overflow: hidden;
+    float: left;
+}
+
+.imgs .aa {
+    width: 1500px;
+    height: 300px;
+    /* background-color: aqua; */
+    /* 10s动画执行的时间 infinite反复执行，无限循环 */
+    animation: donghua 5s steps(3) infinite;
+}
+
+.imgs img {
+    width: 500px;
+    height: 300px;
+    float: left;
+}
+
+@keyframes donghua {
+    0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: -1500px;
+    }
+}
+
+.login {
+    width: 400px;
+    height: 300px;
+    /* background-color: aqua; */
+    float: right;
+    margin: 50px 20px 0 0;
+}
+
+.login-top {
+    width: 400px;
+    height: 50px;
+    background-color: blue;
+    border-bottom: 1px solid gray;
+}
+
+.login-top>.left {
+    width: 200px;
+    height: 50px;
+    float: left;
+    background-color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.login-top>.left>.bor {
+    float: right;
+}
+
+.login-top>.left>.hov:hover {
+    color: red;
+}
+
+.login-top>.right {
+    width: 200px;
+    height: 50px;
+    float: right;
+    background-color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.login-top>.right>.hov:hover {
+    color: red;
+}
+
+.login-body {
+    width: 400px;
+    height: 200px;
+    /* background-color: brown; */
+    position: relative;
+    /* position: absolute; */
+    background-color: white;
+    display: block;
+}
+
+.QRcode {
+    width: 150px;
+    height: 150px;
+    margin: 20px 0 0 125px;
+    transition: margin-left 0.9s ease;
+}
+
+.phone {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    display: none;
+}
+
+.login-body>div {
+    font-size: 13px;
+    color: darkgrey;
+    margin-left: 200px;
+}
+
+.login-body>div>span {
+    color: red;
+}
+
+.footer {
+    width: 400px;
+    height: 50px;
+    background-color: white;
+    line-height: 50px;
+    border-top: 1px solid gray;
+}
+
+.footer>.qq {
+    display: inline-block;
+    background: url(../img/MyHome/login/QQ-weixin.png) no-repeat 0px 0px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-left: 100px;
+}
+
+.footer>.VX {
+    display: inline-block;
+    background: url(../img/MyHome/login/QQ-weixin.png) no-repeat -20px 0px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+
+}
+
+.footer>span {
+    font-size: 13px;
+}
+
+.footer>.lj>a {
+    float: right;
+    margin-right: 50px;
+    text-decoration: none;
+    color: red;
+    font-size: 13px;
+}
+
+.zhbody {
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    display: none;
+}
+
+.zhbody>.p1>input {
+    width: 200px;
+    height: 30px;
+}
+
+.zhbody>.p2>input {
+    width: 200px;
+    height: 30px;
+
+}
+
+.zhbody>.p1,
+.p2 {
+    padding-top: 20px;
+    padding-left: 100px;
+}
+
+.zhbody>.p3 {
+    margin-left: 300px;
+    margin-top: 15px;
+}
+
+.zhbody>.p4 {
+    width: 150px;
+    height: 30px;
+    background-color: red;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 125px;
+}
