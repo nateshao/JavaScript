@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/music.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/music.js"></script>
+    <title>music</title>
+</head>
+<body>
+
+<!--头部-->
+<div id="top">
+</div>
+<audio controls src="mp3/会过去的.mp3" style="opacity: 0;"></audio>
+<!--中间-->
+<div id="middle">
+    <div id="J_mainWrap" class="main-wrap">
+        <!--侧边栏-->
+        <div class="main-sidebar">
+            <div class="menu-outer">
+                 <ul id="J_sidebarMenu">
+                     <li class="current" id="J_menuPlaying">
+                         <a >
+                             <i class="icon-play"></i>
+                             正在播放
+                         </a>
+                     </li>
+                     <li class="current" id="J_menuHistory">
+                         <a >
+                             <i class="icon-history"></i>
+                             播放历史
+                         </a>
+                     </li>
+                     <li class="current" id="J_menuMyfav">
+                     <a >
+                         <i class="icon-myfav"></i>
+                         我收藏的单曲
+                     </a>
+                     </li>
+                     <li class="current" id="J_playing">
+                         <a >
+                             <i class="icon-history"></i>
+                             播放列表
+                         </a>
+                     </li>
+                 </ul>
+            </div>
+            <div class="collect-outer">
+                 <div class="collect-title">
+                      <h3>我创建的精选集</h3>
+                     <span>
+                           <a id="J_createCollect" class="icon-addCollect" title="新建精选集"></a>
+                     </span>
+                 </div>
+            </div>
+        </div>
+        <!--中间列表-->
+        <div class="main-body">
+              <div class="main-page">
+                   <div class="ui-playlist-header ui-row-item">
+                        <div class="ui-row-item-body">
+                             <div class="ui-row-item-column c1">歌曲</div>
+                            <div class="ui-row-item-column c2">演唱者</div>
+                            <div class="ui-row-item-column c3">专辑</div>
+                        </div>
+                   </div>
+                   <ul class="song-list">
+                   </ul>
+                  <div class="ui-playlist-footer">
+                        <div class="ui-track-all">
+                            <div class="ui-all-checkbox">
+                                <input type="checkbox">
+                            </div>
+                            <div class="ui-all-item">
+                                <a href="javascript:;" class="icon-tracks-delete">删除</a>
+                            </div>
+                            <div class="ui-all-item">
+                                <a href="javascript:;" class="icon-tracks-fav">收藏</a>
+                            </div>
+                            <div class="ui-all-item">
+                                <a href="javascript:;" class="icon-tracks-add">添加到网盘</a>
+                            </div>
+                            <div class="ui-all-item">
+                                <a href="javascript:;" class="icon-tracks-more">更多</a>
+                            </div>
+                        </div>
+                  </div>
+              </div>
+        </div>
+        <!--右侧歌词-->
+        <div class="main-outher">
+              <div class="ui-album-cover">
+                  <div class="ui-album-img">
+                      <a href="javascript:;">
+                          <img src="img/42791464958086_2.jpg" alt="">
+                          <img src="img/20242658791424266128_2.jpg" alt="" style="display: none">
+                          <img src="img/p_large_8MMk_574a0000b7832d13.jpg" alt="" style="display: none">
+                      </a>
+                  </div>
+              </div>
+              <div class="ui-player-lrc">
+                  <div class="ks-scroll-view">
+                        <div class="ks-scroll-view-content">
+                            <ul>
+                                <li class="ui-lrc-line ui-lrc-current">梁静茹-会过去的
+                                </li>
+                                <li class="ui-lrc-line">作词：黄婷 作曲：谭志华
+                                </li>
+                                <li class="ui-lrc-line">编曲：陈歆儒
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">新的戒指 失了光泽
+                                </li>
+                                <li class="ui-lrc-line">几年过了呢
+                                </li>
+                                <li class="ui-lrc-line">沉默着  天快暗了
+                                </li>
+                                <li class="ui-lrc-line">我们该把 往事收拾了
+                                </li>
+                                <li class="ui-lrc-line">再多说 也回不去了
+                                </li>
+                                <li class="ui-lrc-line">后来的 都没关系了
+                                </li>
+                                <li class="ui-lrc-line">纵然我 想起你的
+                                </li>
+                                <li class="ui-lrc-line">某年某天 历历还深刻
+                                </li>
+                                <li class="ui-lrc-line">分开后有 一段日子
+                                </li>
+                                <li class="ui-lrc-line">躲得远远的
+                                </li>
+                                <li class="ui-lrc-line">终于我 都走完了
+                                </li>
+                                <li class="ui-lrc-line">慢慢也懂  当时不懂的
+                                </li>
+                                <li class="ui-lrc-line">此刻你 生疏的温柔
+                                </li>
+                                <li class="ui-lrc-line">触及我 结痂的伤口
+                                </li>
+                                <li class="ui-lrc-line">以前多 不能原谅
+                                </li>
+                                <li class="ui-lrc-line">如今都能 笑着说出口
+                                </li>
+                                <li class="ui-lrc-line">我曾为你快乐  也曾为你挫折
+                                </li>
+                                <li class="ui-lrc-line">曾把你 紧紧抱着
+                                </li>
+                                <li class="ui-lrc-line">紧紧依赖着 紧紧地爱着
+                                </li>
+                                <li class="ui-lrc-line">离开很不舍得 以为会崩溃的
+                                </li>
+                                <li class="ui-lrc-line">却在最痛的时刻 最感觉清澈
+                                </li>
+                                <li class="ui-lrc-line">什么都会过去的
+                                </li>
+                                <li class="ui-lrc-line">专辑：爱久见人心
+                                </li>
+                                <li class="ui-lrc-line">LRC Produced by 虾米歌词组
+                                </li>
+                                <li class="ui-lrc-line">思念偶尔 参杂泪水
+                                </li>
+                                <li class="ui-lrc-line">很快就干了
+                                </li>
+                                <li class="ui-lrc-line">时间会 帮我负荷
+                                </li>
+                                <li class="ui-lrc-line">让我的痛 淡掉了颜色
+                                </li>
+                                <li class="ui-lrc-line">相遇在 熟悉的路口
+                                </li>
+                                <li class="ui-lrc-line">翻搅着 内心的沉淀
+                                </li>
+                                <li class="ui-lrc-line">遗失的 那个永远
+                                </li>
+                                <li class="ui-lrc-line">永远还是 留在我心间
+                                </li>
+                                <li class="ui-lrc-line">我曾为你快乐  也曾为你挫折
+                                </li>
+                                <li class="ui-lrc-line">曾把你 紧紧抱着
+                                </li>
+                                <li class="ui-lrc-line">紧紧依赖着 紧紧地爱着
+                                </li>
+                                <li class="ui-lrc-line">离开很不舍得 以为会崩溃的
+                                </li>
+                                <li class="ui-lrc-line">却在最痛的时刻 最感觉清澈
+                                </li>
+                                <li class="ui-lrc-line">什么都会过去的
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">我们都走了 我们都不一样了
+                                </li>
+                                <li class="ui-lrc-line">缘份没有 再一次选择
+                                </li>
+                                <li class="ui-lrc-line">我曾为你快乐  也曾为你挫折
+                                </li>
+                                <li class="ui-lrc-line">曾把你 紧紧抱着
+                                </li>
+                                <li class="ui-lrc-line">紧紧依赖着 紧紧地爱着
+                                </li>
+                                <li class="ui-lrc-line">离开很不舍得 以为会崩溃的
+                                </li>
+                                <li class="ui-lrc-line">却在最痛的时刻 最感觉清澈
+                                </li>
+                                <li class="ui-lrc-line">什么都会过去的
+                                </li>
+                                <li class="ui-lrc-line">过去的在过去 活着
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">Lyrics Contents Copyright Reserved for Original Composers
+                                </li>
+                                <li class="ui-lrc-line">LRC Copyright(C) 2012 Xiami Lyrics Group
+                                </li>
+                            </ul>
+                            <ul style="display:none">
+                                <li class="ui-lrc-line ui-lrc-current">当你老了
+                                </li>
+                                <li class="ui-lrc-line">演唱：莫文蔚
+                                </li>
+                                <li class="ui-lrc-line">作词：赵照 / 叶芝
+                                </li>
+                                <li class="ui-lrc-line">作曲：赵照
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">当你老了 头发白了
+                                </li>
+                                <li class="ui-lrc-line">睡意昏沉
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">当你老了 走不动了
+                                </li>
+                                <li class="ui-lrc-line">炉火旁打盹 回忆青春
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">多少人曾爱你青春欢唱的时辰
+                                </li>
+                                <li class="ui-lrc-line">爱慕你的美丽 假意或真心
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">只有一个人还爱你虔诚的灵魂
+                                </li>
+                                <li class="ui-lrc-line">爱你苍老的脸上的皱纹
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">当你老了 眼眉低垂
+                                </li>
+                                <li class="ui-lrc-line">灯火昏黄不定
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">风吹过来 你的消息
+                                </li>
+                                <li class="ui-lrc-line">这就是我心里的歌
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">多少人曾爱你青春欢唱的时辰
+                                </li>
+                                <li class="ui-lrc-line">爱慕你的美丽 假意或真心
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">只有一个人还爱你虔诚的灵魂
+                                </li>
+                                <li class="ui-lrc-line">爱你苍老的脸上的皱纹
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">当你老了 眼眉低垂
+                                </li>
+                                <li class="ui-lrc-line">灯火昏黄不定
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                                <li class="ui-lrc-line">当我老了 我真希望
+                                </li>
+                                <li class="ui-lrc-line">这首歌是唱给你的
+                                </li>
+                                <li class="ui-lrc-line">&nbsp;</li>
+                            </ul>
+                            <ul style="display: none">
+                                <li class="ui-lrc-line ui-lrc-current">歌名：红豆
+                                </li>
+                                <li class="ui-lrc-line">歌手：王菲
+                                </li>
+                                <li class="ui-lrc-line">编辑：HIM
+                                </li>
+                                <li class="ui-lrc-line">还没好好的感受 雪花绽放的气候
+                                </li>
+                                <li class="ui-lrc-line">我们一起颤抖 会更明白
+                                </li>
+                                <li class="ui-lrc-line">什么是温柔
+                                </li>
+                                <li class="ui-lrc-line">还没跟你牵著手 走过荒芜的沙丘
+                                </li>
+                                <li class="ui-lrc-line">可能从此以后 学会珍惜
+                                </li>
+                                <li class="ui-lrc-line">天长和地久
+                                </li>
+                                <li class="ui-lrc-line">有时候 有时候
+                                </li>
+                                <li class="ui-lrc-line">我会相信一切有尽头
+                                </li>
+                                <li class="ui-lrc-line">相聚离开 都有时候
+                                </li>
+                                <li class="ui-lrc-line">没有什么会永垂不朽
+                                </li>
+                                <li class="ui-lrc-line">可是我 有时候
+                                </li>
+                                <li class="ui-lrc-line">宁愿选择留恋不放手
+                                </li>
+                                <li class="ui-lrc-line">等到风景都看透
+                                </li>
+                                <li class="ui-lrc-line">也许你会陪我 看细水长流
+                                </li>
+                                <li class="ui-lrc-line">还没为你把红豆 熬成缠绵的伤口
+                                </li>
+                                <li class="ui-lrc-line">然后一起分享 会更明白
+                                </li>
+                                <li class="ui-lrc-line">相思的哀愁
+                                </li>
+                                <li class="ui-lrc-line">还没好好的感受 醒著亲吻的温柔
+                                </li>
+                                <li class="ui-lrc-line">可能在我左右 你才追求
+                                </li>
+                                <li class="ui-lrc-line">孤独的自由
+                                </li>
+                                <li class="ui-lrc-line">有时候 有时候
+                                </li>
+                                <li class="ui-lrc-line">我会相信一切有尽头
+                                </li>
+                                <li class="ui-lrc-line">相聚离开 都有时候
+                                </li>
+                                <li class="ui-lrc-line">没有什么会永垂不朽
+                                </li>
+                                <li class="ui-lrc-line">可是我 有时候
+                                </li>
+                                <li class="ui-lrc-line">宁愿选择留恋不放手
+                                </li>
+                                <li class="ui-lrc-line">等到风景都看透
+                                </li>
+                                <li class="ui-lrc-line">也许你会陪我 看细水长流
+                                </li>
+                                <li class="ui-lrc-line">有时候 有时候
+                                </li>
+                                <li class="ui-lrc-line">我会相信一切有尽头
+                                </li>
+                                <li class="ui-lrc-line">相聚离开 都有时候
+                                </li>
+                                <li class="ui-lrc-line">没有什么会永垂不朽
+                                </li>
+                                <li class="ui-lrc-line">可是我 有时候
+                                </li>
+                                <li class="ui-lrc-line">宁愿选择留恋不放手
+                                </li>
+                                <li class="ui-lrc-line">等到风景都看透
+                                </li>
+                                <li class="ui-lrc-line">也许你会陪我 看细水长流
+                                </li>
+                            </ul>
+                        </div>
+                  </div>
+              </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<div id="bottom">
+     <div id="J_playerWrap">
+         <div class="player-info">
+             <div class="track-info">
+                 <div class="player-track-info">
+                     <a href="javascript:;"  id="J_trackName">你会不会</a>
+                     -
+                     <a href="javascript:;" id="singer">梁静茹</a>
+                 </div>
+                 <div class="track-controls">
+                     <a href="javascript:;" id="J_trackFav" class="icon-fav"></a>
+                     <a href="javascript:;" id="J_trackShare" class="icon-share"></a>
+                     <a href="javascript:;" id="J_trackMore" class="icon-more"></a>
+                 </div>
+             </div>
+             <div class="player-length">
+                 <div class="player-position" id="J_positionTime">00:16</div>
+                 <div class="player-progress">
+                     <div class="progress">
+                         <div class="loading"></div>
+                         <div class="playing"></div>
+                     </div>
+                     <div class="panel">
+                         <a href="javascript:;" class="player-dot"></a>
+                     </div>
+                 </div>
+                 <div class="player-duration">03:52</div>
+             </div>
+         </div>
+         <div class="player-controls">
+             <a href="javascript:;" class="prev-btn" title="上一首"></a>
+             <a id="J_playBtn" class="play-btn" title="开始播放"></a>
+             <a href="javascript:;" class="next-btn" title="下一首"></a>
+             <div class="player-mode">
+                 <a href="javascript:;" class="mode-only" title="单曲循环"></a>
+             </div>
+         </div>
+         <div class="player-volume">
+             <a href="javascript:;" class="mode-hq-off26" id="J_playerHQ"></a>
+             <div id="volume">
+                  <div id="J_volumeSpeaker" class="volume-on"></div>
+                 <div class="volume-wrap" id="J_volumeRange">
+                     <div class="volume-panel">
+                         <div class="volume-cur"></div>
+                     </div>
+                     <div class="volume-control">
+                         <a class="volume-dot"></a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tip {
+            width: 280px;
+            position: fixed;
+            top: 100px;
+            left: 150px;
+            border: 1px solid black;
+            text-indent: 2em;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        #grade {
+            width: 180px;
+            position: fixed;
+            top: 100px;
+            left: 1150px;
+            border: 1px solid black;
+            text-indent: 2em;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        #grade h3 {
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="tip">
+        <h1>提示</h1>
+        <p>点击按钮开始游戏</p>
+        <p>方法1：使用鼠标按住滑块，左右拖动，反弹小球</p>
+        <p>方法2：使用键盘“左”“右”方向键控制滑块移动，按住快速移动</p>
+        <p>小球触碰到底部为失败</p>
+        <p>清空所有方块游戏胜利</p>
+    </div>
+    <div id="grade">
+        <!-- <h3>游戏强度：</h3>
+        <h2>XXX</h2> -->
+        <h3>得分:</h3>
+        <h1>00</h1>
+    </div>
+
+
+    <!-- 
+        1.给游戏确定一个区域
+        2.生成砖块，并设置随机颜色
+        3.生成小球以及挡板，判断小球跟砖块碰撞 - 消失
+        4.挡板跟随鼠标移动 - 在最底部
+     -->
+    <script>
+        //第一步 创建一个大盒子
+        var box = document.createElement('div')
+        setStyle(box, {
+            width: "500px",
+            height: "500px",
+            border: "1px solid grey",
+            position: 'relative',
+            margin: "auto"
+        })
+        document.body.appendChild(box)
+        //创建很多的小砖块
+        //设置砖块的宽高
+        var brickWidth = 100
+        var brickHeight = 30
+        var row = 10
+
+        var col = box.clientWidth / brickWidth
+        var num = row * col
+        for (var i = 0; i < num; i++) {
+            var brick = document.createElement('div')
+            brick.className = 'brick'
+            setStyle(brick, {
+                width: brickWidth + "px",
+                height: brickHeight + "px",
+                backgroundColor: getColor(),
+                position: 'absolute',
+                left: i % col * brickWidth + "px",
+                top: parseInt(i / col) * brickHeight + "px"
+            })
+            box.appendChild(brick)
+        }
+        var bricks = document.querySelectorAll('.brick')
+        //获取随机颜色
+        function getColor() {
+            var color = '#';
+            for (var i = 0; i < 3; i++) {
+                var hex = this.getRandom(256).toString(16)
+                hex = hex.length === 1 ? '0' + hex : hex;
+                color += hex;
+            }
+            return color;
+        }
+        //创建挡板和小球
+        var plate = document.createElement("div")
+        setStyle(plate, {
+            width: "200px",
+            height: '30px',
+            backgroundColor: 'black',
+            position: 'absolute',
+            bottom: '0',
+            left: '150px'
+        })
+        box.appendChild(plate)
+        var ball = document.createElement('div')
+        setStyle(ball, {
+            width: "30px",
+            height: '30px',
+            borderRadius: '50%',
+            backgroundColor: 'red',
+            position: 'absolute',
+            bottom: '30px',
+            left: '235px'
+        })
+        box.appendChild(ball)
+        //在大盒子中移动鼠标让挡板跟随
+        box.onmousemove = function () {
+            var e = window.event
+            var x = e.pageX
+            var l = x - box.offsetLeft - plate.offsetWidth / 2
+            //限制左边的值  
+            if (l < 0) {
+                l = 0
+            }
+            //限制右边的值
+            if (l > box.clientWidth - plate.offsetWidth) {
+                l = box.clientWidth - plate.offsetWidth
+            }
+            plate.style.left = l + 'px'
+        }
+
+        // 
+
+        var grade = document.getElementById("grade")
+        var rank = grade.children[0]
+        var score = grade.children[1]
+        var sco = 0;
+
+        //点击挡板让小球移动
+        var speedX = 5
+        var speedY = -5
+        var timer
+        plate.onclick = function () {
+            var l = ball.offsetLeft
+            var t = ball.offsetTop
+            clearInterval(timer)
+            timer = setInterval(function () {
+                if (l >= box.clientWidth - ball.offsetWidth || l <= 0) {
+                    speedX = -speedX
+                }
+                if (t <= 0) {
+                    speedY = -speedY
+                }
+                // if(l <= 0){
+                //     speedX = -speedX
+                // }
+                //判断小球跟挡板相撞
+                if (collide(ball, plate)) {
+                    speedY = -speedY
+                } else {
+                    if (ball.offsetTop + ball.offsetHeight > plate.offsetTop) {
+                        alert('游戏结束，请重新开始!')
+                        clearInterval(timer)
+                    }
+                }
+                //判断小球跟挡砖块是否相撞
+                for (var i = 0; i < bricks.length; i++) {
+                    if (collide(ball, bricks[i])) {
+                        speedY = - speedY
+                        box.removeChild(bricks[i])
+                        sco += 10;
+                        score.innerHTML = sco;
+                        break
+                    }
+                }
+
+                l += speedX
+                t += speedY
+                ball.style.left = l + 'px'
+                ball.style.top = t + 'px'
+
+                //当容器中方块数量为0时，宣布“游戏胜利”，刷新页面
+                if (bricks.length <= 0) {
+                    window.location.reload();
+                    alert("恭喜你，你获胜了!")
+                }
+
+            }, 20)
+        }
+
+
+
+
+
+
+
+        //检测两个div相撞的函数
+        function collide(node1, node2) {
+            if (node1.offsetLeft + node1.offsetWidth <= node2.offsetLeft || node2.offsetLeft + node2.offsetWidth <= node1.offsetLeft || node1.offsetTop + node1.offsetHeight <= node2.offsetTop || node2.offsetTop + node2.offsetHeight <= node1.offsetTop) {
+                return false
+            } else {
+                return true
+            }
+        }
+
+
+        // 获取随机数
+        function getRandom(a, b = 0) {
+            var max = Math.max(a, b)
+            var min = Math.min(a, b)
+            return Math.floor(Math.random() * (max - min) + min)
+        }
+
+        // 封装一个样式对象
+        function setStyle(ele, styleObj) {
+            for (var attr in styleObj) {
+                ele.style[attr] = styleObj[attr]
+            }
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

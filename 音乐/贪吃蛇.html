@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var level = 300;
+        var score = 0;
+        //创建地图
+        function Map() {
+            this.map = document.createElement('div')
+            this.setStyle(this.map, {
+                width: "300px",
+                height: "200px",
+                backgroundColor: "gray",
+                border: "5px solid black",
+                position: "relative"
+            })
+            document.body.appendChild(this.map)
+        }
+        //样式
+        Map.prototype.setStyle = function (ele, styleObj) {
+            for (var attr in styleObj) {
+                ele.style[attr] = styleObj[attr]
+            }
+        }
+        //随机数
+        Map.prototype.getRandom = function (a, b = 0) {
+            var max = Math.max(a, b)
+            var min = Math.min(a, b)
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        var m = new Map()
+        //创建食物
+        function Food() {
+            this.food = document.createElement('div')
+            m.setStyle(this.food, {
+                width: "10px",
+                height: "10px",
+                backgroundColor: "red",
+                position: "absolute",
+                left: parseInt(m.getRandom(m.map.clientWidth - 10) / 10) * 10 + "px",
+                top: parseInt(m.getRandom(m.map.clientHeight - 10) / 10) * 10 + "px"
+            })
+            m.map.appendChild(this.food)
+        }
+        var f = new Food()
+        //创建蛇的身体
+        function Snake() {
+            this.body = [
+                {
+                    x: 0,
+                    y: 0
+                },
+                {
+                    x: 10,
+                    y: 0
+                },
+                {
+                    x: 20,
+                    y: 0
+                },
+                {
+                    x: 30,
+                    y: 0
+                },
+                {
+                    x: 40,
+                    y: 0
+                },
+                {
+                    x: 50,
+                    y: 0
+                },
+                {
+                    x: 60,
+                    y: 0
+                }
+            ]
+            this.direction = 'right'
+            this.show()
+            //改变设移动方向的方法
+            this.changeDirection()
+            //动起来
+            this.timer = null
+            this.timer = setInterval(() => {
+                this.move()
+            }, level)
+        }
+        //蛇移动的方法
+        Snake.prototype.move = function () {
+            for (var i = 0; i < this.body.length - 1; i++) {
+                this.body[i].x = this.body[i + 1].x
+                this.body[i].y = this.body[i + 1].y
+            }
+            switch (this.direction) {
+                case 'left':
+                    this.body[this.body.length - 1].x -= 10
+                    break;
+                case 'right':
+                    this.body[this.body.length - 1].x += 10
+                    break;
+                case 'up':
+                    this.body[this.body.length - 1].y -= 10
+                    break;
+                case 'down':
+                    this.body[this.body.length - 1].y += 10
+                    break;
+            }
+            this.show()
+            //检测是否吃到食物
+            this.eat()
+            //判断死亡的方法
+            this.die()
+        }
+        //蛇死亡的方法
+        Snake.prototype.die = function () {
+            //蛇撞墙死亡
+            if (this.body[this.body.length - 1].x < 0 || this.body[this.body.length - 1].y < 0 || this.body[this.body.length - 1].x > m.map.clientWidth - 10 || this.body[this.body.length - 1].y > m.map.clientHeight - 10) {
+                clearInterval(this.timer)
+                alert('游戏结束!请重新开始')
+            }
+            //蛇撞自己死亡
+            for (var i = 0; i < this.body.length - 1; i++) {
+                if (this.body[i].x === this.body[this.body.length - 1].x
+                    && this.body[i].y === this.body[this.body.length - 1].y) {
+                    clearInterval(this.timer)
+                    alert('游戏结束!请重新开始')
+                    break
+                }
+            }
+        }
+        //吃食物的方法
+        Snake.prototype.eat = function () {
+            if (this.body[this.body.length - 1].x === f.food.offsetLeft
+                && this.body[this.body.length - 1].y === f.food.offsetTop) {
+                this.body.unshift({
+                    x: this.body[0].x,
+                    y: this.body[0].y,  
+                })
+                score = score + 1;
+                c.coumt.innerText = score;
+                console.log("score:" + score)
+                //删除食物并重新创建
+                m.map.removeChild(f.food)
+                f = new Food()
+            }
+        }
+        //控制键盘的方法
+        Snake.prototype.changeDirection = function () {
+            document.onkeydown = e => {
+                var e = e || window.event
+                var keyCode = e.keyCode || e.which
+                console.log(keyCode);
+                var keyword = String.fromCharCode(keyCode).toLowerCase()
+                switch (keyword) {
+                    case 'a':
+                        this.direction = 'left'
+                        break;
+                    case 'd':
+                        this.direction = 'right'
+                        break;
+                    case 'w':
+                        this.direction = 'up'
+                        break;
+                    case 's':
+                        this.direction = 'down'
+                        break;
+                }
+            }
+        }
+        //让蛇显示的方法
+        Snake.prototype.show = function(){
+            var snakes = document.querySelectorAll('.snake')
+            if(snakes.length){
+                for(var i = 0; i < snakes.length; i++){
+                    m.map.removeChild(snakes[i])
+                }
+            }
+            for(var i = 0;i < this.body.length; i++){
+                var div = document.createElement('div')
+                //加个类名区分
+                div.className = 'snake'
+                m.setStyle(div,{
+                    width: "10px",
+                    height:"10px",
+                    backgroundColor: 'black',
+                    position: 'absolute',
+                    left: this.body[i].x + 'px',
+                    top: this.body[i].y + 'px'
+                })
+                m.map.appendChild(div)
+                if(i === this.body.length -1){
+                    m.setStyle(div,{
+                        backgroundColor: "black",
+                        borderRadius: '50%'
+                    })
+                }
+            }
+        }
+        var s = new Snake()
+
+        function Coumt(){
+            this.coumt = document.createElement('div')
+            this.setStyle(this.coumt,{
+                width:"20px",
+                height:"20px",
+            
+                border: "3px solid black",
+            })
+            document.body.appendChild(this.coumt)
+            this.coumt.innerText=0
+            
+        }
+        Coumt.prototype.setStyle = function(ele, styleObj){
+            for (var attr in styleObj) {
+                ele.style[attr] = styleObj[attr]
+            }
+        }
+        // Coumt.prototype.show = function () {
+        //     var sc = document.querySelectorAll('.s')
+        //     div.className = 's'
+        //     sc.innerText = score;
+
+        // }
+        var c = new Coumt();
+    </script>
+</body>
+
+</html>

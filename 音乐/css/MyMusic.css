@@ -48,7 +48,7 @@ video{
     font-size:13px;
 }
 .btn{
-    width: 350px;
+    width: 150px;
     height: 50px;
     margin: auto;
 }
@@ -59,23 +59,6 @@ video{
     border: none;
 }
 .btn button img{
-    width: 100%;
-    height: 100%;
-}
-/*** 新增  ****/
-.newBtn{
-    width: 350px;
-    height: 50px;
-    margin: auto;
-}
-
-.newBtn button{
-    width: 50px;
-    height: 40px;
-    float: right;
-    border: none;
-}
-.newBtn button img{
     width: 100%;
     height: 100%;
 }
